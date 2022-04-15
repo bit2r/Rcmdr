@@ -14,3 +14,5 @@ rmd_files: [
 
   "01-install.Rmd"
 ]
+
+output_dir: docs
