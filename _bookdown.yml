@@ -13,7 +13,10 @@ rmd_files: [
   "index.Rmd",
 
   "install.Rmd",
-  "tools.Rmd"
+  "tools.Rmd",
+  "help.Rmd",
+  "datasets.Rmd"
+
 ]
 
 output_dir: docs

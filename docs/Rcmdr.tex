@@ -162,112 +162,174 @@ R에는 여러 개의 GUI 작업도구들이 있습니다. 모두 목적이 분�
 \hypertarget{install}{%
 \chapter{설치}\label{install}}
 
-\hypertarget{tools}{%
-\chapter{Tools}\label{tools}}
+\hypertarget{uxb3c4uxc6c0uxb9d0-help}{%
+\chapter{\texorpdfstring{도움말 / \texttt{Help}}{도움말 / Help}}\label{uxb3c4uxc6c0uxb9d0-help}}
 
-\hypertarget{uxb3c4uxad6c-uxd328uxd0a4uxc9c0-uxc801uxc7acuxd558uxae30}{%
-\section{도구 \textgreater{} 패키지 적재하기\ldots{}}\label{uxb3c4uxad6c-uxd328uxd0a4uxc9c0-uxc801uxc7acuxd558uxae30}}
+\hypertarget{commander-help-0}{%
+\section{Commander help (0)}\label{commander-help-0}}
 
-\texttt{도구\ \textgreater{}\ 패키지\ 적재하기...\ /\ Tools\ \textgreater{}\ Load\ package(s)...}
+\hypertarget{introduction-to-the-r-comma..-0}{%
+\section{Introduction to the R Comma.. (0)}\label{introduction-to-the-r-comma..-0}}
 
-\includegraphics{fig/tools-load-pkg-01.png}
+\hypertarget{r-commander-website-0}{%
+\section{R Commander website (0)}\label{r-commander-website-0}}
 
-R에 설치된 패키지 목록 창이 등장한다. 원하는 패키지(들)을 찾아서 선택하고 예(OK) 버튼을 누른다. 아래 화면은 vcd 패키지를 설치하는 사례이다.
+\hypertarget{about-rcmdr-0}{%
+\section{About Rcmdr (0)}\label{about-rcmdr-0}}
 
-\includegraphics{fig/tools-load-pkg-02.png}
+\hypertarget{r-commander-hex-sticker}{%
+\section{R Commander hex sticker}\label{r-commander-hex-sticker}}
+
+\includegraphics{fig/help-01.png}
+
+선택하면 아래와 같은 이미지 파일이 등장한다:
+
+\includegraphics{fig/help-02.png}
+
+\hypertarget{help-on-active-data-set-if..-0}{%
+\section{Help on active data set (if.. (0)}\label{help-on-active-data-set-if..-0}}
+
+\hypertarget{start-r-help-system-0}{%
+\section{Start R help system (0)}\label{start-r-help-system-0}}
+
+\hypertarget{r-website-0}{%
+\section{R website (0)}\label{r-website-0}}
+
+\hypertarget{using-r-markdown-0}{%
+\section{Using R Markdown (0)}\label{using-r-markdown-0}}
+
+\hypertarget{uxb370uxc774uxd130uxc14b-datasets}{%
+\chapter{\texorpdfstring{데이터셋 / \texttt{datasets}}{데이터셋 / datasets}}\label{uxb370uxc774uxd130uxc14b-datasets}}
+
+\hypertarget{prestige---cardata-prestige}{%
+\section{\texorpdfstring{Prestige - \texttt{carData\ \textgreater{}\ Prestige}}{Prestige - carData \textgreater{} Prestige}}\label{prestige---cardata-prestige}}
+
+\includegraphics{fig/dataset-prestiage-01.png}
+
+\includegraphics{fig/dataset-prestiage-02.png}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{library}\NormalTok{(vcd) }\CommentTok{\# 원하는 패키지 적재하기}
+\FunctionTok{data}\NormalTok{(Prestige, }\AttributeTok{package=}\StringTok{"carData"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\texttt{vcd} 패키지를 적재(loading) 하는데, \texttt{grid} 패키지가 함께 탑재된 것을 출력창에서 확인할 수 있다.
-\texttt{grid}는 \texttt{vcd} 패키지가 제작되는데 의존한 패키지임을 의미한다.
-어느 패키지가 메모리에 적재되는 과정은 그 패키지가 의존하는 패키지의 자동적인 적재를 동반한다.
-
-\includegraphics{fig/tools-load-pkg-03.png}
-
-\hypertarget{uxb3c4uxad6c-rcmdr-uxd50cuxb7ecuxadf8uxc778-uxc801uxc7acuxd558uxae30}{%
-\section{도구 \textgreater{} Rcmdr 플러그인 적재하기\ldots{}}\label{uxb3c4uxad6c-rcmdr-uxd50cuxb7ecuxadf8uxc778-uxc801uxc7acuxd558uxae30}}
-
-\texttt{도구\ \textgreater{}\ Rcmdr\ 플러그인\ 적재하기...\ /\ Tools\ \textgreater{}\ Load\ Rcmdr\ plug-in(s)....}
-
-\includegraphics{fig/tools-load-plugin-01.png}
-
-R Commander는 플러그인을 통하여 많은 기능이 확산되는 생태계를 갖고 있다. Rcmdr 플러그인을 사용하기 위해서는 먼저 RcmdrPlugin.이름 을 가진 패키지가 설치되어 있어야 한다.
+\includegraphics{fig/dataset-prestiage-03.png}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{()  }\CommentTok{\# RcmdrPlugin.이름 찾기}
+\FunctionTok{help}\NormalTok{(}\StringTok{"Prestige"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{fig/tools-load-plugin-02.png}
+carData 패키지에 있는 Prestige 데이터셋을 \texttt{.csv}로 저장하여 내보낼 수 있다.
 
-아래와 같이 여러개의 RcmdrPlugin.이름을 가진 플러그인들이 설치되었다고 가정하자. 그 중에서 RcmdrPlugin.KMggplot2를 설치해보자. 적재할 플러그인을 찾아서 선택하고, 예(OK) 버튼을 누른다.
+\href{data/Prestige.csv}{다운로드}
 
-\begin{figure}
-\centering
-\includegraphics{fig/tools-load-plugin-03.png}
-\caption{Linux 사례 (MX 21)}
-\end{figure}
+참조: \href{https://rcmdr.tistory.com/52}{활성 데이터셋 내보내기\ldots{}}
 
-Linux 사례 (MX 21)
-아래 화면은 플러그인이 적재되기 이전에 새로운 환경이 등장하는 조건을 환기시키는 질문을 담고 있다. R Commander가 사라졌다가 다시 등장하게된다.
+\hypertarget{moore---cardata-moore}{%
+\section{\texorpdfstring{Moore - \texttt{carData\ \textgreater{}\ Moore}}{Moore - carData \textgreater{} Moore}}\label{moore---cardata-moore}}
 
-\begin{figure}
-\centering
-\includegraphics{fig/tools-load-plugin-04.png}
-\caption{Linux 사례 (MX 21)}
-\end{figure}
+\includegraphics{fig/dataset-moore-01.png}
 
-새롭게 등장하는 R Commander 화면 상단을 살펴보자. 와 사이에 메뉴 하나가 추가됨을 알 수 있다. 적재된 플러그인이 메뉴 창에 등장한다.
+Moore \{carData\}
 
-\includegraphics{fig/tools-load-plugin-05.png}
+R Documentation
 
-\hypertarget{uxb3c4uxad6c-uxc120uxd0dd-uxae30uxb2a5}{%
-\section{도구 \textgreater{} 선택 기능\ldots{}}\label{uxb3c4uxad6c-uxc120uxd0dd-uxae30uxb2a5}}
+Status, Authoritarianism, and Conformity
 
-\texttt{도구\ \textgreater{}\ 선택\ 기능...\ /\ Tools\ \textgreater{}\ Options...}
+Description
 
-\begin{figure}
-\centering
-\includegraphics{fig/tools-options-01.png}
-\caption{Linux 사례 (MX 21)}
-\end{figure}
+The Moore data frame has 45 rows and 4 columns.
+The data are for subjects in a social-psychological experiment,
+who were faced with manipulated disagreement from a partner of either
+of low or high status. The subjects could either conform to the
+partner's judgment or stick with their own judgment.
 
-창에서 스크립트 창 높이 (줄)과 출력물 창 높이 (줄) 을 조정할 수 있다. 자주 R Commander를 사용하다보면, 하나의 명령문을 실행한 다음 얻게되는 출력물을 출력창에서 한번에 보지 못할 때 불편함을 느낀다. 주로 통계적 모델의 요약 정보를 확인하고자 할 때 발생하는 현상이다.
+Usage
 
-\includegraphics{fig/tools-options-02.png}
+Format
 
-아래 창은 스크립트 창 높이 (줄)을 7로, 출력물 창 높이 (줄)을 25로 변경한 사례이다.
+This data frame contains the following columns:
 
-\begin{figure}
-\centering
-\includegraphics{fig/tools-options-03.png}
-\caption{Linux 사례 (MX 21)}
-\end{figure}
+partner.status
 
-스크립트 창과 출력 창의 높이를 조정한 결과는 아래와 같은 비율로 나타난다:
+Partner's status. A factor with levels:
+high,
+low.
 
-\hypertarget{uxae00uxaf34fonts}{%
-\section{글꼴(Fonts)}\label{uxae00uxaf34fonts}}
+conformity
 
-R은 사용 컴퓨터에 내장된 여러 폰트를 사용할 수 있다. R Commander에서 폰트를 고민할 때는 그래프 출력에 어떤 폰트를 사용할까와 화면 출력용으로 어떤 폰트가 좋을까 등일 것이다.
+Number of conforming responses in 40 critical trials.
 
-R Commander에는 , 등의 버튼이 화면 상단에 있다. 활성데이터셋의 내부를 들여다 볼 때, 편집할 때 사용한다. 그런데 간혹 사전에 기본으로 지정된 폰트의 특징 때문에 데이터셋의 내부 정보들의 형식적 일관성(값의 정렬)이 흐트러져 보이는 경우가 있다. 예를 들어, 리눅스에서 한글용으로 사용하는 나눔고딕은 한글 R Commander환경에서 기본 폰트로 사용되는데 버튼을 누르고 내부 정보를 보면 정렬이 일정하지 않는 것을 알 수 있다. 흔히 고정크기를 가진 폰트인가 아닌가에 따른 출력상의 차이라고 한다.
+fcategory
 
-사례 값들의 정렬이 일정하지 않아 데이터셋 내부를 보기가 불편하다면, 경험적으로 나는 Courier로 바꿔준다. 일정한 정렬로 변환될 것이다.
+F-Scale Categorized.
+A factor with levels (note levels out of order):
+high,
+low,
+medium.
 
-\hypertarget{toolssave-rcmdr-options}{%
-\section{Tools/Save Rcmdr options\ldots{}}\label{toolssave-rcmdr-options}}
+fscore
 
-\hypertarget{toolsmanage-mac-os-x-app-nap-for-r.app}{%
-\section{Tools/Manage Mac OS X app nap for R.app\ldots{}}\label{toolsmanage-mac-os-x-app-nap-for-r.app}}
+Authoritarianism: F-Scale score.
 
-\hypertarget{toolsinstall-auxiliary-software}{%
-\section{Tools/Install auxiliary software\ldots{}}\label{toolsinstall-auxiliary-software}}
+Source
+
+Moore, J. C., Jr.~and Krupat, E. (1971)
+Relationship between source status, authoritarianism and conformity in a
+social setting. Sociometry 34, 122--134.
+
+Personal communication
+from J. Moore, Department of Sociology, York University.
+
+References
+
+Fox, J. (2016)
+Applied Regression Analysis and Generalized Linear Models,
+Third Edition. Sage.
+
+Fox, J. and Weisberg, S. (2019)
+An R Companion to Applied Regression, Third Edition, Sage.
+
+{[}Package carData version 3.0-5 Index{]}
+
+\hypertarget{obrienkaiser-2}{%
+\section{OBrienKaiser (2)}\label{obrienkaiser-2}}
+
+\hypertarget{obrienkaiserlong-1}{%
+\section{OBrienKaiserLong (1)}\label{obrienkaiserlong-1}}
+
+\hypertarget{airquality-2}{%
+\section{airquality (2)}\label{airquality-2}}
+
+\hypertarget{bfox-1}{%
+\section{Bfox (1)}\label{bfox-1}}
+
+\hypertarget{sleep-1}{%
+\section{sleep (1)}\label{sleep-1}}
+
+\hypertarget{davisthin-1}{%
+\section{DavisThin (1)}\label{davisthin-1}}
+
+\hypertarget{usarrests-1}{%
+\section{USArrests (1)}\label{usarrests-1}}
+
+\hypertarget{birthwt-1}{%
+\section{birthwt (1)}\label{birthwt-1}}
+
+\hypertarget{friendly-1}{%
+\section{Friendly (1)}\label{friendly-1}}
+
+\hypertarget{cowles-1}{%
+\section{Cowles (1)}\label{cowles-1}}
+
+\hypertarget{adler-1}{%
+\section{Adler (1)}\label{adler-1}}
+
+\hypertarget{warpbreaks-1}{%
+\section{warpbreaks (1)}\label{warpbreaks-1}}
 
   \bibliography{book.bib,packages.bib}
 
