@@ -1,7 +1,7 @@
 --- 
 title: "설치형 오픈 통계 패키지 - `Rcmdr`"
 author: "신종화, 이광춘, 유충현, 홍성학"
-date: "2022-04-15"
+date: "2022-04-16"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

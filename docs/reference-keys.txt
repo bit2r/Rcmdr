@@ -1,2 +1,10 @@
 들어가며
 install
+tools
+도구-패키지-적재하기
+도구-rcmdr-플러그인-적재하기
+도구-선택-기능
+글꼴fonts
+toolssave-rcmdr-options
+toolsmanage-mac-os-x-app-nap-for-r.app
+toolsinstall-auxiliary-software
