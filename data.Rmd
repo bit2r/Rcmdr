@@ -767,4 +767,369 @@ write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
 
 또 하나, 불편한 점이 있다. <행 이름 쓰기>와 관련된 것이다. <행 이름 쓰기>를 하고 저장한 파일에는 변수이름이 한자리 앞으로 오는 문제가 있다. 행 이름 위의 빈 칸에 첫 변수 이름이 쓰여지기 때문이다. 엑셀이나 다른 도구에서 행 이름 위에 있는 변수 이름을 이동시켜야 하는 불편함이 있다. 그렇다고 행 이름을 안쓰는 것도 문제가 될 수 있다. 일련번호는 상관없겠으나 사례 이름이 삭제되면 정보량이 축소되기 때문이다. 그래서 사례이름을 추가적인 변수명으로 사용하는 꼼수가 흔한 상황이다.
 
+## 활성 데이터셋 변수 관리 / Manage variables in active data set
+
+### 변수를 다시 코딩하기.../ Manage variables in active data set > Recode variables...
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-01.png)
+
+기존 변수를 이용하여 새로운 변수를 만들 수 있다. R Commander에서 이 기능은 일반적으로 수치형 변수를 요인형으로 바꾸는데 사용된다. <(각각의) 새로운 변수를 요인으로 만들기>에 선택이 되어 있는 것은 요인형으로 만드는 과정이다.
+
+
+물론 수치형 변수의 사례값들을 다른 값으로 변환시킬수도 있다. 이 기능을 이해하기 위해서는 <"다시 코딩하기" 지시문 입력하기>에 대한 정확한 사용법을 익히는 것이 필수적이다. 초보자에게는 쉽지 않다. 하지만, 논리적으로 이해한다면 차후에 큰 어려움은 없을 것이다.
+
+ 
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-02.png)
+
+
+예를 들어 연령과 같은 수치 정보를 담은 변수가 있다고 하자.
+
+10세 구간으로 바꾸려고 할 때, 10대, 20대, 30대, 40대, 50대, 60대, 70대 이상 등으로 사용할 수 있다. 때로는 65세이상으로 마지막 구간을 사용할 수 있다. 태어난 후 10세가 아닌 아이들을 배제시키기도 한다. 선거와 같은 정치적인 이슈에 대한 입장에서 20대 이상부터 시작하기도 한다. 이 경우 수치형 정보를 구간으로 바꾸어 요인화 시키는 과정이 필요하다.
+
+ 
+
+때로는 소득과 관련하여 상-중-하 등의 3구간으로 나누는 것도 흔하다. 아래의 예와 같이 사용할 수 있다.
+
+```{r recode-variable, eval = FALSE}
+1:10000 = "low"
+10001:20000 = "middle"
+20001:max(데이터셋$변수) = "high" 
+else = NA
+
+```
+
+Prestige 데이터셋에 있는 수치형 변수 education의 구간을 만들어 사례값들을 넣고 요인형로 변수로 만들고자 한다. 아래와 같이 <'다시 코딩하기' 지시문 입력하기>에 입력할 수 있다. 1부터 6까지는 elementary로, 6.01에서 9까지는 middle로 , 9.01에서 12까지는 high로, 12.01에서 16까지 univ라는 구간명을 만들어 넣을 수 있다.
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-03.png)
+
+주의점으로, '다시코딩하기'지시문에 오직 큰 따옴표(" ")를 사용해야 한다. 작은 따옴표를 사용하면 알림글에 오류가 뜬다:  오류: '다시코딩하기'지시문에 오직 큰 따옴표(" ") 사용하기
+
+ 
+
+Prestige 데이터셋에 있는 수치형 변수 education, income을 구간을 정해서 나누고 요인형으로 바꿔서 education.level, income.level 이라고 변수명을 만든 명령문의 출력 결과이다. 
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-04.png)
+
+### 새로운 변수 계산하기.../ Manage variables in active data set > Compute new variable...
+
+ 
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-mutate-01.png)
+
+
+활성 데이터셋에 있는 변수들을 활용하여 새로운 변수를 생성하는 많은 방법이 있다. <Compute new variable...>은 일반적으로 수치형 사례를 갖고 있는 변수(들)을 사칙연산, log, 제곱근 등의 계산기법을 활용하여 새롭게 만드는 것이다. 계산에 의해서 새롭게 생성되는 사례들을 새로운 변수이름으로 저장할 수 있다. variable 이라는 추천된 변수 이름이 있지만, 사용자가 직접 지정할 수 있다.
+
+Prestige 데이터셋에 있는 income 변수를 log를 이용하여 변환해보자. 
+
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-mutate-02.png)
+
+다음과 같은 명령문으로, income.log라는 변수가 새롭게 생성된다.
+
+> Prestige$income.log <- with(Prestige, log(income))
+
+### 관찰 수를 데이터셋에 더하기 / Manage variables in active data set > Add observation number to data set
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-add-rows-01.png) 
+
+데이터프레임 형식의 데이터셋은 행과 열로 구성된다. 1부터 행의 길이에 해당되는 값을 일련번호 식으로 맨 앞부터 붙인 사례값을 가진 변수를 만드는 기능이다. 변수이름은 ObsNumber로 자동 정해진다.
+
+> Prestige$ObsNumber <- 1:102
+ 
+
+이렇게 일련번호를 가진 변수(ObsNumber)는 어떻게 활용될 수 있을까. 특정 사례(행)에 지정된 고유값을 변수로 전환하고, $ObsNumber를 행의 고유값으로 사용할 수도 있다. 이 작업은 데이터셋을 .csv, .txt 등으로 내보낼 때 활용되기도 한다.
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-add-rows-02.png) 
+
+### 변수 표준화하기.../ Manage variables in active data set > Standardize variables...
+
+ 
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-standardize-01.png)
+
+
+활성데이터셋에 있는 수치형 변수들은 서로 다른 기준의 값들을 가질 것이다. 정수형 값도 있을 수 있다. 크기도 다를 수 있다. 만약 크기와 기준이 다른 수치형 변수들을 결합해서 분석 작업을 진행할 경우, 영향력 순위를 확인하는데 불편할 수 있다. 
+
+ 
+
+예를 들어서, 시험과목 중에서 어느 것이 난이도가 높은가를 알려면 평균점수를 확인할 것이고, 같은 점수라 하더라도 어느 과목점수가 더 높은가를 확인하려면, 이른바 상대평가를 하려면 척도 계산을 해야할 것이다. 변수 표준화하기는 척도 함수를 사용하여 상대화된 기준으로 사례 값을 재조정하는 기능이다. 대화창에서 수치형 변수를 선택하고 변수를 표준화하면, 기존의 변수명 앞에 Z가 붙는, Z.변수라는 새로운 표준화 값을 갖는 변수가 생성된다.
+
+ 
+
+Prestige 데이터셋에서 교육연수(education)와 수입(income)이 직업의 권위에 대한 사회적 인식(prestige)에 어떤 영향을 미치는가에 대한 문제의식에 대한 통계학적 접근을 위하여 세개의 수치형 변수를 표준화하려고 한다.
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-standardize-02.png)
+
+
+```{r variable-standardize, eval=FALSE}
+Prestige <- local({
+  .Z <- scale(Prestige[,c("education","income","prestige")])
+  within(Prestige, {
+    Z.prestige <- .Z[,3]
+    Z.income <- .Z[,2]
+    Z.education <- .Z[,1] 
+  })
+})
+```
+ 
+
+R Commander에 있는 <데이터셋 보기> 버튼을 눌러 Prestige 데이터셋의 내부를 살펴보자. Z.prestige, Z.income, Z.education 이라는 세개의 변수가 생성되었음을 알 수 있다.
+
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-standardize-03.png)
+
+### 수치 변수를 요인으로 변환하기.../ Manage variables in active data set > Convert numeric variable to factor...
+
+![Windows 사례](fig/data-active-convert-factor-01.png)
+
+
+
+수치 변수를 요인으로 전환해야 하는 경우가 흔하다. 남성을 1, 여성을 2로 입력한 엑셀 자료를 불러오는 경우, 1과 2를 요인으로 재지정해야 남성, 여성의 의미를 담은 변수로 활용할 수 있다. 일반적으로 이런 변수를 명목변수(nominal variable)이라고 하지만, R에서는 factor (variable)로 부른다. 간혹 요인분석에 익숙한 사용자가 factor와 factor analysis를 헷갈려하는 경우가 있기도 하다.
+
+수치 변수인가? 요인 인가? 변수의 유형에 대한 이해가 필요한 이유는 실용적으로 볼 때, 시각화와 연결된 작업때문이다. 줄여 말하면, 수치 변수로 표현할 수 있는 시각화와 요인으로 표현할 시각화 기법이 다르다고 할 수 있다. 어려운가? 간단히 예를 들면, 히스토그램은 수치 변수의 시각화 기법이다. 그러나, 막대 차트는 요인의 시각화 기법이다. 수치 변수는 더할 수 있고, 요인은 셀 수 있다.
+
+먼저 datasets 패키지에 있는 [airquality 데이터셋](https://rcmdr.tistory.com/100)을 활성화시키자.
+
+
+작업창에는 '다중 변수를 위한 새로운 변수 이름 또는 접미사: <변수와 똑같음>' 이라는 조건입력칸이 있다. 변수 이름을 덮어쓰면서, 바뀐 변수 유형을 기억하기도 하지만, 나는 흔히 _f를 추가한다. 원래의 수치 변수 옆에 _f가 붙어있는 요인을 만들어 그 차이를 기억하는 방식이다.
+
+![Linux 사례 (MX 21)](fig/data-active-convert-factor-02.png)
+
+> 데이터셋 <- with(데이터셋, {요인형변수이름 <- as.factor(수치형변수) })
+
+```{r numeric-to-factor, eval = FALSE}
+airquality <- within(airquality, { month.f <- as.factor(Month) })
+```
+
+
+참고로, 간혹 다음의 오류 지시문 "수준의 숫자 ( ) (이)가 너무 넓습니다"이 아래 알림글에 나올 수 있다. 이것은 요인화로 만들어지는 수준의 갯수가 너무 많다는 의미이다. 그래서 요인 수준 이름을 일일이 넣을 추가 작업창을 R Commander에서 만들 수 없다는 뜻이다. 작업창의 요인 수준에서 "수준 이름 사용하기"를 선택 (기본선택사항)해서 이와 같은 오류 지시문이 나오는 경우, 그 아래에 있는 "숫자 사용하기" 선택을 하면 된다.
+
+아래 출력창에서 airquality 데이터셋의 Month 변수와 month.f 변수를 비교해보자. Month 변수는 수치형 변수로서 최소, 평균, 최대 값을 갖고 있는 반면에, month.f 변수는 5에 31, 7에 31, 9에 30 등의 갯수를 갖고 있다.
+
+![Linux 사례 (MX 21)](fig/data-active-convert-factor-03.png)
+
+### 문자 변수를 요인으로 변환하기.../ Manage variables in active data set > Convert character variables to factors...
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-01.png)
+
+
+활성화된 데이터셋이 있는 경우에도 <문자 변수를 요인으로 변환하기...> 기능이 비활성화되어있는 때가 있다. 이 상황은 활성화된 데이터셋에 문자 변수가 없는 경우이다.
+
+문자 변수를 갖고 있는 데이셋을 만들어(또는 불러와) 이 기능을 활성화시키자. carData 패키지의 Prestige 데이터셋을 Prestige.csv 파일로 내보냈다고 하자.
+
+[Export active data set...](https://rcmdr.tistory.com/52)
+
+
+참고로 이 블로그에 Prestige.csv 파일을 올려놓았다. 바로 내려받아 사용할 수 있다.
+
+[Prestige_csv](https://rcmdr.tistory.com/98)
+
+이 파일을 <데이터 불러오기> 기능을 통하여 다시 불러보자. 갖고 있는 어떤 .csv파일을 불러오는 것과 같은 사례로 이해할 수 있다. 이 경우는 Data > 데이터 불러오기 > TXT 파일, 클립보드 또는 URL에서... 의 기능을 사용하는 것이다.
+
+[from text file, clipboard, or URL...](https://rcmdr.tistory.com/29)
+
+1. 불러올 데이터셋 파일의 이름은 Prestige.csv, 저장될 데이터셋 객체의 이름을 Prestige_csv라고 하자.
+1. <문자 변수를 요인으로 변환하기>에 있는 클릭을 제거하자.
+1. 필드 구분자를 <쉼표 [,]>로 선택하자.
+1. 그리고 새롭게 열리는 디렉토리 창에서 Prestige.csv 파일을 찾아 선택하자.
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-02.png)
+
+
+Prestige 데이터셋과 달리, Prestige_csv 데이터셋의 type 변수는 요인이 아닌 문자형이다.
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-03.png)
+
+문자형 변수가 포함된 Prestige_csv 데이터셋이 활성화되면, <문자 변수를 요인으로 변환하기...> 기능이 활성화된다.
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-04.png)
+
+문자형 변수 목록에 type 변수가 보인다. <다중 변수를 위한 새로운 변수 이름 또는 접미사>에 변환시킬문자형변수.f를 넣고, 기존 type 변수와 비교해보자. 예(OK) 버톤을 누른다.
+
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-05.png)
+
+활성데이터셋 <- within(활성데이터셋, { 새로운변수이름 <- as.factor(변환시킬문자형변수) })
+
+Prestige_csv <- within(Prestige_csv, { type.f <- as.factor(type) })
+출력창 아래에 있는 type 변수와 type.f 변수를 비교해보자. type.f 변수는 요인형으로 전환되어 있다.
+
+
+![Linux 사례 (MX 21)](fig/data-active-convert-character-06.png)
+
+### 수치 변수 구간만들기.../ Manage variables in active data set > Bin a numeric variable...
+
+![Linux 사례 (MX 21)](fig/data-active-bin-01.png)
+
+
+수치 변수를 촘촘히 연결된 연속형 변수라고 생각해보자. 선 그래프로 시각화 할 수 있을 것이다. 연속적인 값들을 구간으로 나누어 쪼개어 배치하는 기법이 필요할 수 있다. 흔히 연령을 연령대로 만드는 작업이 이것에 속한다.
+
+구간을 만드는 작업창에는 몇 몇 검토 사항의 조건들을 묻는 내용이 있다.
+1. 몇 개의 구간을 만들 것인가?
+2. 구간 수준의 이름을 어떻게 정할 것인가?
+3. 구간화 작업을 넓이로, 계산치로, 군집화로 할 것인가?
+
+몇 개의 구간을 만들 것인가라는 질문에 답을 결정하려면, 아마도 이 수치형 변수의 요약적 특징을 미리 알고 있어야 할 것이다. 그리고, 구간화 작업에서 동일-넓이 구간이 기본 선택사항인데, 다른 선택을 하려면, 데이터에 대한 이해와 높은 분석적 통찰력이 요구될 것이다.
+
+carData 패키지에 있는 Prestige 데이터셋의 수입(연봉)을 뜻하는 income 변수를 구간으로 쪼개자. income 변수는 수치형 변수이다. 102개의 income 변수의 사례 요약은 다음과 같다:
+
+![Linux 사례 (MX 21)](fig/data-active-bin-02.png)
+
+income.bin1, income.bin2, income.bin3 등 세개의 income 변수 구간화 작업을 하자. 구간의 수는 3개로, 수준 이름은 lower, middle, upper로 정하자. 구간화 기법은 bin1은 동일-넓이 구간, bin2는 동일-계산치 구간, bin3는 Natural breaks(K-평균 군집화에서)을 각각 선택하자.
+
+![Linux 사례 (MX 21)](fig/data-active-bin-03.png)
+
+![Linux 사례 (MX 21)](fig/data-active-bin-04.png)
+
+아래 출력창에서 각각의 구간화 인자 method와 세 변수의 요인 갯수를 살펴보라.
+
+![Linux 사례 (MX 21)](fig/data-active-bin-05.png)
+
+<데이터셋 보기> 버튼을 눌러 Prestige 데이터셋에서 income.bin1, income.bin2, income.bin3의 요인들을 살펴보라.
+
+![Linux 사례 (MX 21)](fig/data-active-bin-06.png)
+
+### 요인 수준 재정렬하기.../ Manage variables in active data set > Reorder factor levels...
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-01.png) 
+
+carData 패키지의 Prestige 데이터셋을 이용해서 <요인 수준 재정렬하기> 기능을 사용해보자. Prestige 데이터셋에 있는 직업유형을 나타내는 type 변수는 bc, prof, wc라는 요인 수준을 갖고 있다. blue collar, white collar, professional 블루칼라, 화이트칼라, 전문직 등을 나타낸다. 그런데, bc, prof, wc는 순서가 있는 요인 수준이 아니다. 요인의 알파벳 순서대로 1, 2, 3 등이 부여된 요인 수준이다.
+
+ 
+
+첫째로 bc, wc, prof로 수준의 순서를 바꿔보자. 먼저 type1으로 요인형 변수의 이름을 새롭게 정해보자.
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-02.png) 
+
+bc에 1, wc에 2, prof에 3을 넣는다.
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-03.png) 
+
+그렇다면, 둘째로 bc, wc, prof 순서를 정해놓고 각각 1, 2, 3을 지정해서 요인 수준을 정해보자. 정확히는 bc < wc < prof 순서를 정해놓고, 각각 1, 2, 3을 부여하는 것이다. type2라는 요인형 변수로 지정한다.
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-04.png) 
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-05.png) 
+
+str() 함수를 이용하여, type, type1, type2 변수의 구조를 살펴보자. 그리고 factor() 함수의 용례를 다시 살펴보라. levels, ordered 라는 인자가 의미하는 것을 알게될 것이다.
+
+ 
+```{r factor-reorder, eval = FALSE}
+Prestige$type1 <- with(Prestige, factor(type, levels=c('bc','wc','prof')))
+
+Prestige$type2 <- with(Prestige, factor(type, levels=c('bc','wc','prof'), ordered=TRUE))
+
+str(Prestige$type)
+str(Prestige$type1)
+str(Prestige$type2)
+
+```
+
+
+![Linux 사례 (MX 21)](fig/data-active-reorder-06.png) 
+
+
+### 사용하지 않은 요인 수준 누락시키기.../ Manage variables in active data set > Drop unused factor levels...
+
+![Linux 사례 (MX 21)](fig/data-active-drop-level-01.png) 
+
+
+carData 패키지에 있는 Prestige 데이터셋에는 type 이라는 요인형 변수가 있다. bc, prof, wc 라는 수준을 갖고 있다.  blue collar, professional, white collar를 뜻한다. 블루칼라와 화이트칼라 그룹의 수입(연봉), 학력(교육연수), 직업권위를 뜻하는 income, education, prestige 라는 변수의 정보를 비교하고자 한다. 먼저 prof 수준을 데이터셋에서 제거해야 할 것이다.
+
+ 
+![Linux 사례 (MX 21)](fig/data-active-drop-level-02.png) 
+
+
+참고로, <하위셋 표현식>을 보다 꼼꼼히 살펴보라
+
+```{r drop-levels-ox, eval = FALSE}
+
+Prestige.sub1 <- subset(Prestige, subset=type !="prof")       [O]
+
+Prestige.sub1 <- subset(Prestige, subset=type=!prof)          [X]
+Prestige.sub1 <- subset(Prestige, subset=type=!"prof")        [X]
+```
+ 
+
+아래 출력창에서 Prestige 데이터셋의 type, Prestige.sub1 데이터셋의 type 요약 정보를 비교해보라. Prestige 데이터셋의 type 변수에는 prof 수준을 가진 31개의 사례가 사라졌지만, prof 수준은 아직 남아있다.
+
+![Linux 사례 (MX 21)](fig/data-active-drop-level-03.png) 
+
+
+Prestige.sub1의 type 변수에서 사용되지 않는 수준인, 다른말로 사례를 갖고 있는 않는 수준인 prof를 제거하자. 그래서 bc, wc 두개의 수준을 비교하는 정보를 만들고, 분석한다고 하자. <수준을 누락시킬 요인 (하나 이상 선택)>에서 type을 선택하고, 예(OK) 버튼을 누른다.
+
+![Linux 사례 (MX 21)](fig/data-active-drop-level-04.png) 
+
+그리고 아래 화면에서 OK 버튼을 누른다.
+
+![Linux 사례 (MX 21)](fig/data-active-drop-level-05.png) 
+
+```{r drop-levels, eval = FALSE}
+Prestige.sub1 <- within(Prestige.sub1, {
+  type <- droplevels(type) 
+})
+
+```
+
+
+
+
+출력창에서 사용하지않는 요인 수준이 있는 변수정보와 누락시킨 이후의 변수정보를 찾아 비교해보라. type변수에 사례가 없는 prof 수준이 제거된 후 bc와 wc 두개 요인만 보일 것이다.
+
+![Linux 사례 (MX 21)](fig/data-active-drop-level-06.png) 
+
+### 요인 대비 정의하기.../ Manage variables in active data set > Define contrasts for a factor...
+
+
+![Linux 사례 (MX 21)](fig/data-active-contrast-01.png) 
+
+
+요인형 변수의 특징을 수리적으로 다루기 위해서 행렬(매트릭스) 형식으로 재구성하는 경우가 빈번하다. 변수 내부의 기준 수준을 정하거나, 개별 수준들의 특징(사례 갯수, 거리)을 기준으로 행렬을 만드는데 활용되는 선택사항들을 결정한다. Prestige 데이터셋에는 직업 유형을 뜻하는 type 이라는 요인형 변수가 있다. <요인 대비 설정하기> 기능은 요인형 변수에만 해당된다. 다음의 화면에서 선택할 수 있다.
+
+![Linux 사례 (MX 21)](fig/data-active-contrast-02.png) 
+
+### 변수이름 다시 짓기.../ Manage variables in active dataset > Rename variables...
+
+
+![Linux 사례 (MX 21)](fig/data-active-rename-01.png) 
+
+
+변수의 이름을 바꿔야할 때 사용하는 기능이다. 이름을 바꿀 변수를 선택하고 예(OK) 단추를 누르면, 다음 창이 뜨는데 여기에서 생각한 새로운 변수 이름을 입력하면 된다.
+
+
+![Linux 사례 (MX 21)](fig/data-active-rename-02.png) 
+
+![Linux 사례 (MX 21)](fig/data-active-rename-03.png) 
+ 
+
+> names(데이터셋이름)[변수번호] <- c("새로운변수이름1", "새로운변수이름2", "새로운변수이름3") 등으로 함수가 사용된다.
+
+```{r factor-rename, eval = FALSE}
+names(Prestige)[c(1, 2, 4)] <- c("교육연수", "수입", "직업권위")
+
+```
+
+![Linux 사례 (MX 21)](fig/data-active-rename-04.png) 
+
+R Commander 화면에서 <데이터셋 보기> 버튼을 누르면, 다음과 같이 변수 이름이 바뀐 데이터셋 정보를 보게된다.
+
+![Linux 사례 (MX 21)](fig/data-active-rename-05.png) 
+
+### 데이터셋에서 변수 지우기.../ Manage variables in active data set > delete variables from data set...
+
+ 
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-delete-01.png)
+
+잘못 작업된 변수 또는 분석에 필요없는 변수를 삭제하는 기능이다. 삭제하고자 하는 변수를 선택하고 예(OK) 버튼을 누른다.
+
+ 
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-delete-02.png)
+
+
+삭제하기전에 다시 한번 확인하는 질문을 받는다. 예(OK) 버튼을 누른다.
+
+![Linux 사례 (Ubuntu 18.04)](fig/data-active-delete-03.png)
+
+출력창에 아래와 같은 명령문의 내용을 보게 될 것이다. 알림글에는 2개의 변수가 삭제되었음을 알리는 주석이 등장한다.
+
+
+> 데이터셋 <- within(데이터셋, {삭제될변수 <- NULL })
 
