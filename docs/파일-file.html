@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>3 . 파일 / File | 설치형 오픈 통계 패키지 - Rcmdr</title>
+<meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
+<meta name="description" content="3.1 작업 디렉토리 바꾸기…/ File &gt; Change working directory…  Windows 사례 R이 시작되는 곳, 불러올 데이터가 보관되는 곳, 그리고 데이터를 저장할 곳이 다른 경우가 흔히 발생한다. 흔히 ‘경로’ 변경과 관련된 일인데, 일일이 수작업으로 입력하기가 불편하다. GUI 환경에서 R 작업을 할 때, 효과적인 영역이다....">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="3 . 파일 / File | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 작업 디렉토리 바꾸기…/ File &gt; Change working directory…  Windows 사례 R이 시작되는 곳, 불러올 데이터가 보관되는 곳, 그리고 데이터를 저장할 곳이 다른 경우가 흔히 발생한다. 흔히 ‘경로’ 변경과 관련된 일인데, 일일이 수작업으로 입력하기가 불편하다. GUI 환경에서 R 작업을 할 때, 효과적인 영역이다....">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3 . 파일 / File | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta name="twitter:description" content="3.1 작업 디렉토리 바꾸기…/ File &gt; Change working directory…  Windows 사례 R이 시작되는 곳, 불러올 데이터가 보관되는 곳, 그리고 데이터를 저장할 곳이 다른 경우가 흔히 발생한다. 흔히 ‘경로’ 변경과 관련된 일인데, 일일이 수작업으로 입력하기가 불편하다. GUI 환경에서 R 작업을 할 때, 효과적인 영역이다....">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">설치형 오픈 통계 패키지 - <code>Rcmdr</code></a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 들어가며</a></li>
+<li><a class="" href="install.html"><span class="header-section-number">2</span> 설치</a></li>
+<li><a class="active" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="파일-file" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3 . </span> 파일 / <code>File</code><a class="anchor" aria-label="anchor" href="#%ED%8C%8C%EC%9D%BC-file"><i class="fas fa-link"></i></a>
+</h1>
+<div id="작업-디렉토리-바꾸기-file-change-working-directory" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> 작업 디렉토리 바꾸기…/ File &gt; Change working directory…<a class="anchor" aria-label="anchor" href="#%EC%9E%91%EC%97%85-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%B0%94%EA%BE%B8%EA%B8%B0-file-change-working-directory"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/file-cwd.png" alt=""><p class="caption">Windows 사례</p>
+</div>
+<p>R이 시작되는 곳, 불러올 데이터가 보관되는 곳, 그리고 데이터를 저장할 곳이 다른 경우가 흔히 발생한다. 흔히 ‘경로’ 변경과 관련된 일인데, 일일이 수작업으로 입력하기가 불편하다. GUI 환경에서 R 작업을 할 때, 효과적인 영역이다.</p>
+<ul>
+<li>MS-Windows 경우, user &gt; 문서 경로부터 화면이 시작된다.</li>
+</ul>
+<p>관련된 함수는 <code><a href="https://rdrr.io/r/base/getwd.html">getwd()</a></code>, <code><a href="https://rdrr.io/r/base/getwd.html">setwd()</a></code> 등이 있다.</p>
+</div>
+<div id="스크립트-파일-열기-file-open-script-file" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> 스크립트 파일 열기…/ File &gt; Open script file…<a class="anchor" aria-label="anchor" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0-file-open-script-file"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/file-open.png" alt=""><p class="caption">Windows 사례</p>
+</div>
+<p><code>.R</code> 형식의 스크립트 파일을 만드는 것은 R을 사용하는 데이터과학자의 일반적인 활동이다. 때로는 길게, 때로는 짧게 .R 파일들을 만든다. 저장된 파일을 다시 불러서 추가적인 작업을 하거나, 코드를 고치거나, 때로는 다른 사용자가 만든 .R 파일을 불러와 작업을 하는 것이 흔하다.</p>
+<p><code>.R</code> 파일은 일반적으로 문서 편집기로 작업을 할 수 있다. <strong>R Commander</strong>는 입력창과 출력창을 나눠서 작업이 가능하기 때문에, 입력창을 문서 편집기처럼 활용해서 .R 파일을 작업할 수 있다.</p>
+</div>
+<div id="스크립트-저장하기-file-save-script" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> 스크립트 저장하기…/ File &gt; Save script…<a class="anchor" aria-label="anchor" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-script"><i class="fas fa-link"></i></a>
+</h2>
+<p>R Commander의 입력창에서 작업한 내용을 .R 파일 형식으로 저장한다. 저장하는 작업공간을 선택 또는 변경할 수 있다.</p>
+<p>RCommander.R이 기본설정으로 스크립트 이름이 나온다. 원하는 이름으로 변경하여 사용하자.</p>
+</div>
+<div id="스크립트-다른-이름으로-저장하기-file-save-script-as" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> 스크립트 다른 이름으로 저장하기…/ File &gt; Save script as…<a class="anchor" aria-label="anchor" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-script-as"><i class="fas fa-link"></i></a>
+</h2>
+<p>작업한 스크립트 파일을 다른 이름으로 저장한다. 기본으로 설정된 파일 이름은 RCommander.R이다. 이름을 원하는 것으로 변경한다.</p>
+</div>
+<div id="open-r-markdown-file" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> Open R Markdown file…<a class="anchor" aria-label="anchor" href="#open-r-markdown-file"><i class="fas fa-link"></i></a>
+</h2>
+<p>R의 Reproducible Research 분야에서 온라인 웹보고서용으로 최근 크게 부각되는 형식이 Markdown이다. 제작된 R Markdown 파일을 불러오는데 사용하는 기능이다.</p>
+</div>
+<div id="r-markdown-파일-저장하기-file-save-r-markdown-file.." class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> R Markdown 파일 저장하기…/ File &gt; Save R Markdown file..<a class="anchor" aria-label="anchor" href="#r-markdown-%ED%8C%8C%EC%9D%BC-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-markdown-file.."><i class="fas fa-link"></i></a>
+</h2>
+<p>R Markdown 파일을 (원하는 위치에) 저장한다.</p>
+</div>
+<div id="r-markdown-파일을-다른-이름으로-저장하기-file-save-r-markdown-file-as" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> R Markdown 파일을 다른 이름으로 저장하기…/ File &gt; Save R Markdown file as…<a class="anchor" aria-label="anchor" href="#r-markdown-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-markdown-file-as"><i class="fas fa-link"></i></a>
+</h2>
+<p>R Markdown file을 열고 작업한 뒤에, 새로운 이름으로 변경하여 원하는 위치에 저장한다.</p>
+</div>
+<div id="출력물-저장하기-file-save-output" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> 출력물 저장하기…/ File &gt; Save output…<a class="anchor" aria-label="anchor" href="#%EC%B6%9C%EB%A0%A5%EB%AC%BC-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-output"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/file-save-output-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>출력창에 다음과 같은 내용들이 있다고 가정하자:</p>
+<div class="figure">
+<img src="fig/file-save-output-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>출력창에 나온 결과 값들을 파일로 저장한다. 이 파일은 기본설정으로 RCommander .txt 형식으로 되어있는데, 이름을 자유롭게 변경하여 저장할 수 있다.</p>
+<div class="figure">
+<img src="fig/file-save-output-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>RCommander.txt라는 이름으로 출력물을 파일로 저장하였다고 가정하자. 텍스트파일을 열고 편집할 수 있는 편집기를 열고 살펴보면 다음과 같이 저장된 것을 볼 것이다:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">carData</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Prestige"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
+<pre><code>## 'data.frame':    102 obs. of  6 variables:
+##  $ education: num  13.1 12.3 12.8 11.4 14.6 ...
+##  $ income   : int  12351 25879 9271 8865 8403 11030 8258 14163 11377 11023 ...
+##  $ women    : num  11.16 4.02 15.7 9.11 11.68 ...
+##  $ prestige : num  68.8 69.1 63.4 56.8 73.5 77.6 72.6 78.1 73.1 68.8 ...
+##  $ census   : int  1113 1130 1171 1175 2111 2113 2133 2141 2143 2153 ...
+##  $ type     : Factor w/ 3 levels "bc","prof","wc": 2 2 2 2 2 2 2 2 2 2 ...</code></pre>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
+<pre><code>##    education          income          women           prestige    
+##  Min.   : 6.380   Min.   :  611   Min.   : 0.000   Min.   :14.80  
+##  1st Qu.: 8.445   1st Qu.: 4106   1st Qu.: 3.592   1st Qu.:35.23  
+##  Median :10.540   Median : 5930   Median :13.600   Median :43.60  
+##  Mean   :10.738   Mean   : 6798   Mean   :28.979   Mean   :46.83  
+##  3rd Qu.:12.648   3rd Qu.: 8187   3rd Qu.:52.203   3rd Qu.:59.27  
+##  Max.   :15.970   Max.   :25879   Max.   :97.510   Max.   :87.20  
+##      census       type   
+##  Min.   :1113   bc  :44  
+##  1st Qu.:3120   prof:31  
+##  Median :5135   wc  :23  
+##  Mean   :5402   NA's: 4  
+##  3rd Qu.:8312            
+##  Max.   :9517</code></pre>
+<p>저장할 파일의 이름을 결정하고, 파일로 저장한 이후에 &lt;출력물 저장하기…&gt; 기능은 출력물을 계속 업데이트해서 저장하는데 반복적으로 사용한다.</p>
+</div>
+<div id="출력물을-다른-이름으로-저장하기-file-save-output-as" class="section level2" number="3.9">
+<h2>
+<span class="header-section-number">3.9</span> 출력물을 다른 이름으로 저장하기…/ File &gt; Save output as…<a class="anchor" aria-label="anchor" href="#%EC%B6%9C%EB%A0%A5%EB%AC%BC%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-output-as"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/file-save-output-as-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu18.04)</p>
+</div>
+<p>출력 결과를 다른 이름으로 원하는 위치에 저장할 수 있다. 기본 설정된 파일 이름은 RCommander.txt 인데, 이름을 바꿔서 저장한다.</p>
+<div class="figure">
+<img src="fig/file-save-output-as-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu18.04)</p>
+</div>
+<p>자료처리와 분석과정에서 여러 개의 출력물을 만드는 것이 일반적이다. 하나의 파일에 길고 많은 양의 출력파일을 만들기도 하지만, 분석과정에서 다양하게 분류될 수 있는 분석범주들을 구성할 때가 흔히 발생하기 때문이다. 출력물을 원하는 곳에 원하는 이름으로 저장하는데 쓰이는 기능으로 자주 활용된다.</p>
+</div>
+<div id="r-작업공간-저장하기-file-save-r-workspace" class="section level2" number="3.10">
+<h2>
+<span class="header-section-number">3.10</span> R 작업공간 저장하기…/ File &gt; Save R workspace…<a class="anchor" aria-label="anchor" href="#r-%EC%9E%91%EC%97%85%EA%B3%B5%EA%B0%84-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-workspace"><i class="fas fa-link"></i></a>
+</h2>
+<p>작업공간에서 만든/생성된 하나 이상의 객체를 원하는 이름의 파일로 저장할 수 있다. .RData 파일 형식인데, 이름을 만들어 원하는 위치에 파일을 저장할 수 있다.</p>
+<p>메뉴에 Data &gt; load data set… 이 있다. 이 기능을 통하여 저장된 R 작업공간의 객체들을 다시 불러올 수 있다.</p>
+</div>
+<div id="r-작업공간을-다른-이름으로-저장하기-file-save-r-workspace-as" class="section level2" number="3.11">
+<h2>
+<span class="header-section-number">3.11</span> R 작업공간을 다른 이름으로 저장하기…/ File &gt; Save R workspace as…<a class="anchor" aria-label="anchor" href="#r-%EC%9E%91%EC%97%85%EA%B3%B5%EA%B0%84%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-workspace-as"><i class="fas fa-link"></i></a>
+</h2>
+<p>R 작업공간의 이름을 바꿀 수 있다. 이름을 바꾼다는 것은 앞서 생산한 작업공간 파일(.RData)을 불러들여서 추가 작업을 진행한 것을 뜻할 것이다.</p>
+</div>
+<div id="나가기-commander와-r에서-file-exit-from-commander-and-r" class="section level2" number="3.12">
+<h2>
+<span class="header-section-number">3.12</span> 나가기 &gt; Commander와 R에서 / File &gt; Exit &gt; From Commander and R<a class="anchor" aria-label="anchor" href="#%EB%82%98%EA%B0%80%EA%B8%B0-commander%EC%99%80-r%EC%97%90%EC%84%9C-file-exit-from-commander-and-r"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Exit?</li>
+<li>Save script file?</li>
+<li>Save R Markdown file?</li>
+<li>Save output file? 등의 추가 질문을 받는다.</li>
+</ul>
+<p>File 메뉴에 있는 기능들과 동일하다. 사용자로 하여금 ‘시간과 노력을 들여 작업한 내용을’ 저장없이 잃어버리는 것을 환기시키기 위하여 제공된다.</p>
+<ul>
+<li>터미날의 쉘 환경으로 돌아간다. 그런데 아쉬운 점이 하나 발생한다. 다시 R과 R Commander를 실행할 경우, 새로운 쉘을 이용해야 한다. 기존 쉘 환경에서는 입력내용이 화면에 출력되지 않는다. 예를 들어, From Commander and R을 실행하여 R을 종료한 다음, 다시 R을 실행하려고 ’R’을 쉘에 입력하면, 화면에 ’R’이 보이지 않는다. 하지만, R은 실행된다. 또 R 프롬프트에서도 입력이 되지 않는다.</li>
+</ul>
+</div>
+<div id="나가기-commander에서-file-exit-from-commander" class="section level2" number="3.13">
+<h2>
+<span class="header-section-number">3.13</span> 나가기 &gt; Commander에서 / File &gt; Exit &gt; From Commander<a class="anchor" aria-label="anchor" href="#%EB%82%98%EA%B0%80%EA%B8%B0-commander%EC%97%90%EC%84%9C-file-exit-from-commander"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Exit?</li>
+<li>Save script file?</li>
+<li>Save R Markdown file?</li>
+<li>Save output file? 등의 추가 질문을 받는다.</li>
+</ul>
+<p>File 메뉴에 있는 기능들과 동일하다. 사용자로 하여금 ‘시간과 노력을 들여 작업한 내용을’ 저장없이 잃어버리는 것을 환기시키기 위하여 제공된다.</p>
+<p>Commander에서 나가면 R 프롬프트 상태가 된다. 다시 R Commander를 부르기 위해서 <code><a href="https://www.r-project.org">library(Rcmdr)</a></code>, <code><a href="https://www.r-project.org">require(Rcmdr)</a></code> 등은 작동하지 않는다. 대신 <strong><code>Commander()</code></strong>를 사용한다.</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="install.html"><span class="header-section-number">2</span> 설치</a></div>
+<div class="empty"></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%ED%8C%8C%EC%9D%BC-file"><span class="header-section-number">3</span> 파일 / File</a></li>
+<li><a class="nav-link" href="#%EC%9E%91%EC%97%85-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC-%EB%B0%94%EA%BE%B8%EA%B8%B0-file-change-working-directory"><span class="header-section-number">3.1</span> 작업 디렉토리 바꾸기…/ File &gt; Change working directory…</a></li>
+<li><a class="nav-link" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EC%97%B4%EA%B8%B0-file-open-script-file"><span class="header-section-number">3.2</span> 스크립트 파일 열기…/ File &gt; Open script file…</a></li>
+<li><a class="nav-link" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-script"><span class="header-section-number">3.3</span> 스크립트 저장하기…/ File &gt; Save script…</a></li>
+<li><a class="nav-link" href="#%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-script-as"><span class="header-section-number">3.4</span> 스크립트 다른 이름으로 저장하기…/ File &gt; Save script as…</a></li>
+<li><a class="nav-link" href="#open-r-markdown-file"><span class="header-section-number">3.5</span> Open R Markdown file…</a></li>
+<li><a class="nav-link" href="#r-markdown-%ED%8C%8C%EC%9D%BC-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-markdown-file.."><span class="header-section-number">3.6</span> R Markdown 파일 저장하기…/ File &gt; Save R Markdown file..</a></li>
+<li><a class="nav-link" href="#r-markdown-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-markdown-file-as"><span class="header-section-number">3.7</span> R Markdown 파일을 다른 이름으로 저장하기…/ File &gt; Save R Markdown file as…</a></li>
+<li><a class="nav-link" href="#%EC%B6%9C%EB%A0%A5%EB%AC%BC-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-output"><span class="header-section-number">3.8</span> 출력물 저장하기…/ File &gt; Save output…</a></li>
+<li><a class="nav-link" href="#%EC%B6%9C%EB%A0%A5%EB%AC%BC%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-output-as"><span class="header-section-number">3.9</span> 출력물을 다른 이름으로 저장하기…/ File &gt; Save output as…</a></li>
+<li><a class="nav-link" href="#r-%EC%9E%91%EC%97%85%EA%B3%B5%EA%B0%84-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-workspace"><span class="header-section-number">3.10</span> R 작업공간 저장하기…/ File &gt; Save R workspace…</a></li>
+<li><a class="nav-link" href="#r-%EC%9E%91%EC%97%85%EA%B3%B5%EA%B0%84%EC%9D%84-%EB%8B%A4%EB%A5%B8-%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0-file-save-r-workspace-as"><span class="header-section-number">3.11</span> R 작업공간을 다른 이름으로 저장하기…/ File &gt; Save R workspace as…</a></li>
+<li><a class="nav-link" href="#%EB%82%98%EA%B0%80%EA%B8%B0-commander%EC%99%80-r%EC%97%90%EC%84%9C-file-exit-from-commander-and-r"><span class="header-section-number">3.12</span> 나가기 &gt; Commander와 R에서 / File &gt; Exit &gt; From Commander and R</a></li>
+<li><a class="nav-link" href="#%EB%82%98%EA%B0%80%EA%B8%B0-commander%EC%97%90%EC%84%9C-file-exit-from-commander"><span class="header-section-number">3.13</span> 나가기 &gt; Commander에서 / File &gt; Exit &gt; From Commander</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

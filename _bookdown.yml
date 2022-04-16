@@ -13,9 +13,10 @@ rmd_files: [
   "index.Rmd",
 
   "install.Rmd",
-  "tools.Rmd",
-  "help.Rmd",
-  "datasets.Rmd"
+  "file.Rmd",
+  # "tools.Rmd",
+  # "help.Rmd",
+  # "datasets.Rmd"
 
 ]
 

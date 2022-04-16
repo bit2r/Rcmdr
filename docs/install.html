@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>2 . 설치 | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
-<meta name="description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta name="description" content="2.1 맥OS Rcmdr 통계 프로그램을 맥에서 설치하는 경우 다음 전제 조건을 충족시키고 순서대로 진행하여 설치작업을 완료한다. 가장 최신 맥OS로 갱신 R 설치 다운로드 XQuartz 설치 다운로드 재부팅 R.app에서 R 실행 메뉴에서 Packages &amp; Data &gt; Package Installer 이동 Rcmdr 검색 Rcmdr 선택...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="2 . 설치 | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
-<meta property="og:description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta property="og:description" content="2.1 맥OS Rcmdr 통계 프로그램을 맥에서 설치하는 경우 다음 전제 조건을 충족시키고 순서대로 진행하여 설치작업을 완료한다. 가장 최신 맥OS로 갱신 R 설치 다운로드 XQuartz 설치 다운로드 재부팅 R.app에서 R 실행 메뉴에서 Packages &amp; Data &gt; Package Installer 이동 Rcmdr 검색 Rcmdr 선택...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2 . 설치 | 설치형 오픈 통계 패키지 - Rcmdr">
-<meta name="twitter:description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta name="twitter:description" content="2.1 맥OS Rcmdr 통계 프로그램을 맥에서 설치하는 경우 다음 전제 조건을 충족시키고 순서대로 진행하여 설치작업을 완료한다. 가장 최신 맥OS로 갱신 R 설치 다운로드 XQuartz 설치 다운로드 재부팅 R.app에서 R 실행 메뉴에서 Packages &amp; Data &gt; Package Installer 이동 Rcmdr 검색 Rcmdr 선택...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -41,9 +41,7 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> 들어가며</a></li>
 <li><a class="active" href="install.html"><span class="header-section-number">2</span> 설치</a></li>
-<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">3</span> 도구 / Tools</a></li>
-<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">4</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">5</span> 데이터셋 / datasets</a></li>
+<li><a class="" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
 </ul>
 
         <div class="book-extra">
@@ -55,14 +53,49 @@
 <h1>
 <span class="header-section-number">2 . </span> 설치<a class="anchor" aria-label="anchor" href="#install"><i class="fas fa-link"></i></a>
 </h1>
+<div id="맥os" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> 맥OS<a class="anchor" aria-label="anchor" href="#%EB%A7%A5os"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>Rcmdr</code> 통계 프로그램을 맥에서 설치하는 경우 다음 전제 조건을 충족시키고 순서대로 진행하여 설치작업을 완료한다.</p>
+<ol style="list-style-type: decimal">
+<li>가장 최신 맥OS로 갱신</li>
+<li>R 설치 <a href="https://www.r-project.org/">다운로드</a>
+</li>
+<li>XQuartz 설치 <a href="https://www.xquartz.org/">다운로드</a>
+</li>
+<li><strong>재부팅</strong></li>
+<li>
+<code>R.app</code>에서 R 실행</li>
+<li>메뉴에서 Packages &amp; Data &gt; Package Installer 이동
+<ul>
+<li>
+<code>Rcmdr</code> 검색</li>
+<li>
+<code>Rcmdr</code> 선택</li>
+<li>
+<code>Install Dependecies</code> 체크박스 클릭</li>
+<li>
+<code>Install Selected</code> 클릭</li>
+</ul>
+</li>
+<li>R 명령 프롬프트에서 <code><a href="https://www.r-project.org">library(Rcmdr)</a></code> 실행</li>
+</ol>
+<p>자세한 사항은 아래 동영상 참조</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iapfZ7QSRSA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="index.html"><span class="header-section-number">1</span> 들어가며</a></div>
-<div class="next"><a href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">3</span> 도구 / Tools</a></div>
+<div class="next"><a href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#install"><span class="header-section-number">2</span> 설치</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#install"><span class="header-section-number">2</span> 설치</a></li>
+<li><a class="nav-link" href="#%EB%A7%A5os"><span class="header-section-number">2.1</span> 맥OS</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
