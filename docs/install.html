@@ -44,9 +44,10 @@
 <li><a class="" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
 <li><a class="" href="%ED%8E%B8%EC%A7%91-edit.html"><span class="header-section-number">4</span> 편집 / Edit</a></li>
 <li><a class="" href="%EB%B6%84%ED%8F%AC-distribution.html"><span class="header-section-number">5</span> 분포 / distribution</a></li>
-<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">6</span> 도구 / Tools</a></li>
-<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">7</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">8</span> 데이터셋 / datasets</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></li>
+<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">7</span> 도구 / Tools</a></li>
+<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">8</span> 도움말 / Help</a></li>
+<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">9</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -109,6 +110,25 @@
 </ol>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p6hl3jFdjio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
+</div>
+<div id="rstudio-에서-rcmdr-설치" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> RStudio 에서 <code>Rcmdr</code> 설치<a class="anchor" aria-label="anchor" href="#rstudio-%EC%97%90%EC%84%9C-rcmdr-%EC%84%A4%EC%B9%98"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>RStudio 설치 <a href="https://www.rstudio.com/products/rstudio/download/">다운로드</a>
+</li>
+<li>콘솔 창에 <code>install.packages("Rcmdr")</code> 입력</li>
+<li>우측하단 <code>Packages</code> –&gt; <code>install</code> –&gt; <code>Rcmdr</code> 입력후 <code>install</code> 버튼 클릭</li>
+<li>
+<code>Rcmdr</code> 실행
+<ul>
+<li>콘솔창에 library(“Rcmdr”) 입력 실행</li>
+</ul>
+</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aXUyG140v48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 
 </div>
 </div>
@@ -121,6 +141,7 @@
 <li><a class="nav-link" href="#install"><span class="header-section-number">2</span> 설치</a></li>
 <li><a class="nav-link" href="#%EB%A7%A5os"><span class="header-section-number">2.1</span> 맥OS</a></li>
 <li><a class="nav-link" href="#%EC%9C%88%EB%8F%84%EC%9A%B0%EC%A6%88"><span class="header-section-number">2.2</span> 윈도우즈</a></li>
+<li><a class="nav-link" href="#rstudio-%EC%97%90%EC%84%9C-rcmdr-%EC%84%A4%EC%B9%98"><span class="header-section-number">2.3</span> RStudio 에서 Rcmdr 설치</a></li>
 </ul>
 
       <div class="book-extra">
@@ -145,6 +166,34 @@
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>

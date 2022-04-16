@@ -16,6 +16,7 @@ rmd_files: [
   "file.Rmd",
   "edit.Rmd",
   "distribution.Rmd",
+  "data.Rmd",
   "tools.Rmd",
   "help.Rmd",
   "datasets.Rmd",

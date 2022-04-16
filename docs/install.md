@@ -33,6 +33,14 @@
     
 <iframe width="560" height="315" src="https://www.youtube.com/embed/p6hl3jFdjio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## RStudio 에서 `Rcmdr` 설치
 
-    
+1. RStudio 설치 [다운로드](https://www.rstudio.com/products/rstudio/download/)
+1. 콘솔 창에 `install.packages("Rcmdr")` 입력
+1. 우측하단 `Packages` --> `install` --> `Rcmdr` 입력후 `install` 버튼 클릭
+1. `Rcmdr` 실행
+    - 콘솔창에 library("Rcmdr") 입력 실행
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aXUyG140v48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
     

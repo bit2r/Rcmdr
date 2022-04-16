@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>5 . 분포 / distribution | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
-<meta name="description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta name="description" content="5.1 난수생성기 시드(seed) 생성기… / Distributions &gt; Set random number generator seed…  Linux 사례 (MX 21) 번호 하나를 선택한다. 그 번호는 앞으로 생성되는 난수 값들을 기억한다. Linux 사례 (MX 21) set.seed(9723)  5.2 분포도  5.2.1 연속 분포 &gt; 정규 분포...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="5 . 분포 / distribution | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
-<meta property="og:description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta property="og:description" content="5.1 난수생성기 시드(seed) 생성기… / Distributions &gt; Set random number generator seed…  Linux 사례 (MX 21) 번호 하나를 선택한다. 그 번호는 앞으로 생성되는 난수 값들을 기억한다. Linux 사례 (MX 21) set.seed(9723)  5.2 분포도  5.2.1 연속 분포 &gt; 정규 분포...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5 . 분포 / distribution | 설치형 오픈 통계 패키지 - Rcmdr">
-<meta name="twitter:description" content="John Fox 교수님이 개발한 Rcmdr 오픈 통계 패키지를 통계 대중화를 위해 한글화해서 공유합니다.">
+<meta name="twitter:description" content="5.1 난수생성기 시드(seed) 생성기… / Distributions &gt; Set random number generator seed…  Linux 사례 (MX 21) 번호 하나를 선택한다. 그 번호는 앞으로 생성되는 난수 값들을 기억한다. Linux 사례 (MX 21) set.seed(9723)  5.2 분포도  5.2.1 연속 분포 &gt; 정규 분포...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -44,9 +44,10 @@
 <li><a class="" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
 <li><a class="" href="%ED%8E%B8%EC%A7%91-edit.html"><span class="header-section-number">4</span> 편집 / Edit</a></li>
 <li><a class="active" href="%EB%B6%84%ED%8F%AC-distribution.html"><span class="header-section-number">5</span> 분포 / distribution</a></li>
-<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">6</span> 도구 / Tools</a></li>
-<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">7</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">8</span> 데이터셋 / datasets</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></li>
+<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">7</span> 도구 / Tools</a></li>
+<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">8</span> 도움말 / Help</a></li>
+<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">9</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -59,14 +60,220 @@
 <h1>
 <span class="header-section-number">5 . </span> 분포 / <code>distribution</code><a class="anchor" aria-label="anchor" href="#%EB%B6%84%ED%8F%AC-distribution"><i class="fas fa-link"></i></a>
 </h1>
+<div id="난수생성기-시드seed-생성기-distributions-set-random-number-generator-seed" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> 난수생성기 시드(seed) 생성기… / Distributions &gt; Set random number generator seed…<a class="anchor" aria-label="anchor" href="#%EB%82%9C%EC%88%98%EC%83%9D%EC%84%B1%EA%B8%B0-%EC%8B%9C%EB%93%9Cseed-%EC%83%9D%EC%84%B1%EA%B8%B0-distributions-set-random-number-generator-seed"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/distribution-rand-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>번호 하나를 선택한다. 그 번호는 앞으로 생성되는 난수 값들을 기억한다.</p>
+<div class="figure">
+<img src="fig/distribution-rand-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">9723</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="분포도" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> 분포도<a class="anchor" aria-label="anchor" href="#%EB%B6%84%ED%8F%AC%EB%8F%84"><i class="fas fa-link"></i></a>
+</h2>
+<div id="연속-분포-정규-분포-정규-분위수-distributions-continuous-distributions-normal-distribution-normal-quantiles" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분위수…/ Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Normal quantiles…<a class="anchor" aria-label="anchor" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%EC%9C%84%EC%88%98-distributions-continuous-distributions-normal-distribution-normal-quantiles"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/distribution-quantile-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>확률을 넣고, 분포도의 (꼬리) 방향을 정해주면, 분위수가 계산된다. 을 95%(.095)로 선택해보자.  선택에 따라 어떻게 값이 변하는지 살펴보자.</p>
+<div class="figure">
+<img src="fig/distribution-quantile-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-quantile-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.95</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 1.644854</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">qnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">.95</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] -1.644854</code></pre>
+<p>아래 화면에서 95% 확률로  방향의 값을 확인할 수 있다.</p>
+<div class="figure">
+<img src="fig/distribution-quantile-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="연속-분포-정규-분포-정규-확률-distributions-continuous-distributions-normal-distribution-normal-probabilities" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> 연속 분포 &gt; 정규 분포 &gt; 정규 확률…/ Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Normal probabilities…<a class="anchor" aria-label="anchor" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%ED%99%95%EB%A5%A0-distributions-continuous-distributions-normal-distribution-normal-probabilities"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/distribution-prob-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>사례 값을 넣고, 분포도의 (꼬리) 방향을 정해주면 확률이 계산된다.</p>
+<div class="figure">
+<img src="fig/distribution-prob-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-prob-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-prob-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-prob-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.644854</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.95</code></pre>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.644854</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.04999996</code></pre>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.644854</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.04999996</code></pre>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">pnorm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.644854</span><span class="op">)</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span>, lower.tail<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0.95</code></pre>
+<div class="figure">
+<img src="fig/distribution-prob-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="연속-분포-정규-분포-정규-분포-그리기-distributions-continuous-distributions-normal-distribution-plot-normal-distribution" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분포 그리기… / Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Plot normal distribution…<a class="anchor" aria-label="anchor" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EA%B7%B8%EB%A6%AC%EA%B8%B0-distributions-continuous-distributions-normal-distribution-plot-normal-distribution"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/distribution-density-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>&lt;밀도 함수 그리기 (Plot density function)&gt;를 선택하고 <x->을 선택한 상황에서 몇 몇 사례를 만들어본다.</x-></p>
+<div class="figure">
+<img src="fig/distribution-density-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span>, regions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.644854</span>, <span class="cn">Inf</span><span class="op">)</span><span class="op">)</span>, 
+  col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'#BEBEBE'</span>, <span class="st">'#FFA500'</span><span class="op">)</span>, legend.pos<span class="op">=</span><span class="st">'topright'</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-density-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-density-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span>, regions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.96</span>, <span class="cn">Inf</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, 
+  <span class="op">-</span><span class="fl">1.96</span><span class="op">)</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'#BEBEBE'</span>, <span class="st">'#FFA500'</span><span class="op">)</span>, legend.pos<span class="op">=</span><span class="st">'topright'</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-07.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>&lt;밀도 함수 그리기 (Plot density function)&gt;를 선택하고 를 선택한 상황에서 몇 몇 사례를 만들어본다.</p>
+<div class="figure">
+<img src="fig/distribution-density-08.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>에 입력할 수 있는 범위는 0에서 1까지의 확률이다. 이 범위 안에 들어오는 숫자는 아래 명령문 내부 regions에서 보이듯이 분위수로 전환된다.</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span>, regions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1.64485362695147</span>, 
+  <span class="fl">1.64485362695147</span><span class="op">)</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'#BEBEBE'</span>, <span class="st">'#FFA500'</span><span class="op">)</span>, legend.pos<span class="op">=</span><span class="st">'topright'</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-09.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-density-10.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span>, regions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, 
+  <span class="fl">1.64485362695147</span><span class="op">)</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'#BEBEBE'</span>, <span class="st">'#FFA500'</span><span class="op">)</span>, legend.pos<span class="op">=</span><span class="st">'topright'</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-11.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/distribution-density-12.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/eval.html">local</a></span><span class="op">(</span><span class="op">{</span>
+  <span class="va">.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3.291</span>, <span class="fl">3.291</span>, length.out<span class="op">=</span><span class="fl">1000</span><span class="op">)</span>  
+  <span class="fu">plotDistr</span><span class="op">(</span><span class="va">.x</span>, <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">dnorm</a></span><span class="op">(</span><span class="va">.x</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, cdf<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"Density"</span>, 
+  main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"Normal Distribution:  Mean=0, Standard deviation=1"</span><span class="op">)</span>, regions<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="cn">Inf</span>, 
+  <span class="fl">1.64485362695147</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2.32634787404084</span>, <span class="cn">Inf</span><span class="op">)</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'#BEBEBE'</span>, <span class="st">'#FFA500'</span><span class="op">)</span>, legend.pos<span class="op">=</span><span class="st">'topright'</span><span class="op">)</span>
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/distribution-density-13.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="연속-분포-정규-분포-정규-분포의-표본-distributions-continuous-distributions-normal-distributions-sample-from-normal-distribution" class="section level3" number="5.2.4">
+<h3>
+<span class="header-section-number">5.2.4</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분포의 표본…/ Distributions &gt; Continuous distributions &gt; Normal distributions &gt; Sample from normal distribution…<a class="anchor" aria-label="anchor" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC%EC%9D%98-%ED%91%9C%EB%B3%B8-distributions-continuous-distributions-normal-distributions-sample-from-normal-distribution"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/distribution-normal-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p> 창에는 다양한 선택 기능이 있다. 표본의 수 (행)과 관찰 수 (열)에 표본 범위를 넣자. ’데이터셋의 이름 입력하기’에는 원하는 이름을 넣을 수 있다. 나는 set.seed(번호)를 연상시키는 번호를 입력하기도 한다.</p>
+<div class="figure">
+<img src="fig/distribution-normal-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">9723</span><span class="op">)</span>
+<span class="va">NormalSamples_9723</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span><span class="op">*</span><span class="fl">5</span>, mean<span class="op">=</span><span class="fl">0</span>, sd<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, ncol<span class="op">=</span><span class="fl">5</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span><span class="op">(</span><span class="va">NormalSamples_9723</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"sample"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">NormalSamples_9723</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"obs"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span></code></pre></div>
+<p><a href="https://rcmdr.tistory.com/158">Set random number generator seed…</a> 참고</p>
+<div class="figure">
+<img src="fig/distribution-normal-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+</div>
+<div id="이산분포-discrete-distributions" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> 이산분포 / Discrete distributions<a class="anchor" aria-label="anchor" href="#%EC%9D%B4%EC%82%B0%EB%B6%84%ED%8F%AC-discrete-distributions"><i class="fas fa-link"></i></a>
+</h2>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="%ED%8E%B8%EC%A7%91-edit.html"><span class="header-section-number">4</span> 편집 / Edit</a></div>
-<div class="next"><a href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">6</span> 도구 / Tools</a></div>
+<div class="next"><a href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#%EB%B6%84%ED%8F%AC-distribution"><span class="header-section-number">5</span> 분포 / distribution</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EB%B6%84%ED%8F%AC-distribution"><span class="header-section-number">5</span> 분포 / distribution</a></li>
+<li><a class="nav-link" href="#%EB%82%9C%EC%88%98%EC%83%9D%EC%84%B1%EA%B8%B0-%EC%8B%9C%EB%93%9Cseed-%EC%83%9D%EC%84%B1%EA%B8%B0-distributions-set-random-number-generator-seed"><span class="header-section-number">5.1</span> 난수생성기 시드(seed) 생성기… / Distributions &gt; Set random number generator seed…</a></li>
+<li>
+<a class="nav-link" href="#%EB%B6%84%ED%8F%AC%EB%8F%84"><span class="header-section-number">5.2</span> 분포도</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%EC%9C%84%EC%88%98-distributions-continuous-distributions-normal-distribution-normal-quantiles"><span class="header-section-number">5.2.1</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분위수…/ Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Normal quantiles…</a></li>
+<li><a class="nav-link" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%ED%99%95%EB%A5%A0-distributions-continuous-distributions-normal-distribution-normal-probabilities"><span class="header-section-number">5.2.2</span> 연속 분포 &gt; 정규 분포 &gt; 정규 확률…/ Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Normal probabilities…</a></li>
+<li><a class="nav-link" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EA%B7%B8%EB%A6%AC%EA%B8%B0-distributions-continuous-distributions-normal-distribution-plot-normal-distribution"><span class="header-section-number">5.2.3</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분포 그리기… / Distributions &gt; Continuous distributions &gt; Normal distribution &gt; Plot normal distribution…</a></li>
+<li><a class="nav-link" href="#%EC%97%B0%EC%86%8D-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC-%EC%A0%95%EA%B7%9C-%EB%B6%84%ED%8F%AC%EC%9D%98-%ED%91%9C%EB%B3%B8-distributions-continuous-distributions-normal-distributions-sample-from-normal-distribution"><span class="header-section-number">5.2.4</span> 연속 분포 &gt; 정규 분포 &gt; 정규 분포의 표본…/ Distributions &gt; Continuous distributions &gt; Normal distributions &gt; Sample from normal distribution…</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%EC%9D%B4%EC%82%B0%EB%B6%84%ED%8F%AC-discrete-distributions"><span class="header-section-number">5.3</span> 이산분포 / Discrete distributions</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -90,6 +297,34 @@
   </div>
 
 </div></div>
-</footer>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
 </body>
 </html>
