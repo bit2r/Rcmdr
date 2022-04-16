@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr</title>
+<meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
+<meta name="description" content="7.1 요약 / Statistics &gt; Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04) ...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta property="og:type" content="book">
+<meta property="og:description" content="7.1 요약 / Statistics &gt; Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04) ...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta name="twitter:description" content="7.1 요약 / Statistics &gt; Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04) ...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">설치형 오픈 통계 패키지 - <code>Rcmdr</code></a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 들어가며</a></li>
+<li><a class="" href="install.html"><span class="header-section-number">2</span> 설치</a></li>
+<li><a class="" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
+<li><a class="" href="%ED%8E%B8%EC%A7%91-edit.html"><span class="header-section-number">4</span> 편집 / Edit</a></li>
+<li><a class="" href="%EB%B6%84%ED%8F%AC-distribution.html"><span class="header-section-number">5</span> 분포 / distribution</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></li>
+<li><a class="active" href="statistics.html"><span class="header-section-number">7</span> 통계 / Statistics</a></li>
+<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">8</span> 도구 / Tools</a></li>
+<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">9</span> 도움말 / Help</a></li>
+<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">10</span> 데이터셋 / datasets</a></li>
+<li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="statistics" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7 . </span> 통계 / Statistics<a class="anchor" aria-label="anchor" href="#statistics"><i class="fas fa-link"></i></a>
+</h1>
+<div id="요약-statistics-summaries" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> 요약 / Statistics &gt; Summaries<a class="anchor" aria-label="anchor" href="#%EC%9A%94%EC%95%BD-statistics-summaries"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/statistics-01.png" alt=""><p class="caption">LInux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다:</p>
+<div class="figure">
+<img src="fig/statistics-02.png" alt=""><p class="caption">LInux 사례 (Ubuntu 18.04)</p>
+</div>
+<div id="활성-데이터셋-summaries-active-data-set" class="section level3" number="7.1.1">
+<h3>
+<span class="header-section-number">7.1.1</span> 활성 데이터셋 / Summaries &gt; Active Data set<a class="anchor" aria-label="anchor" href="#%ED%99%9C%EC%84%B1-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-summaries-active-data-set"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>Prestige라는 데이터셋을 불러와서 자료처리와 분석용으로 활성화시켰다고 가정하자. Prestige 데이터셋의 요약정보를 보고자 할때,  기능을 선택한다:</p>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
+<pre><code>##                          education.income.women.prestige.census.type
+##  accountants,12.77,9271,15.7,63.4,1171,prof    : 1                  
+##  aircraft.repairmen,10.1,7716,0.78,50.3,8582,bc: 1                  
+##  aircraft.workers,8.78,6573,5.78,43.7,8515,bc  : 1                  
+##  architects,15.44,14163,2.69,78.1,2141,prof    : 1                  
+##  athletes,11.44,8206,8.13,54.1,3373,NA         : 1                  
+##  auto.repairmen,8.1,5795,0.81,38.1,8581,bc     : 1                  
+##  (Other)                                       :96</code></pre>
+<div class="figure">
+<img src="fig/statistics-summary-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+</div>
+<div id="수치적-요약-statistics-summaries-numeric-summaries" class="section level3" number="7.1.2">
+<h3>
+<span class="header-section-number">7.1.2</span> 수치적 요약…/ Statistics &gt; Summaries &gt; Numeric summaries…<a class="anchor" aria-label="anchor" href="#%EC%88%98%EC%B9%98%EC%A0%81-%EC%9A%94%EC%95%BD-statistics-summaries-numeric-summaries"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-numeric-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>&lt;수치적 요약…&gt; 메뉴를 선택하면 하위 창이 나온다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-numeric-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>데이터 창과 통계 창이 있다. 통계 창을 보려면 데이터 옆에 있는 통계 창을 선택하면 된다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-numeric-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>다시 데이터 창으로 와서 prestige 라는 변수의 수치적 요약 정보를 보고자 한다. prestige 변수를 선택하고, 오른쪽 아래의 예(OK) 버튼을 선택한다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-numeric-04.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>입력 창과 출력 창을 살펴보자. 통계 창의 선택사항들에 변경을 주지 않은 상태에서 Prestige 라는 데이터셋의 prestige 변수의 수치적 정보는 다음과 같다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-numeric-05.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+</div>
+<div id="빈도-분포-summaries-frequency-distributions" class="section level3" number="7.1.3">
+<h3>
+<span class="header-section-number">7.1.3</span> 빈도 분포… / Summaries &gt; Frequency distributions…<a class="anchor" aria-label="anchor" href="#%EB%B9%88%EB%8F%84-%EB%B6%84%ED%8F%AC-summaries-frequency-distributions"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-frequency-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<div class="figure">
+<img src="fig/statistics-summary-frequency-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>type 변수를 선택하고 예(OK)를 누른다. Prestige 데이터셋의 type 변수의 빈도를 보는 명령문이 다음과 같이 입력창에 기록되고 출력창에 빈도 정보가 출력된다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-frequency-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04) - 입력 창 기록</p>
+</div>
+<div class="figure">
+<img src="fig/statistics-summary-frequency-04.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04) - 출력창 출력결과</p>
+</div>
+<hr>
+<p>Q1&gt; Prestige의 변수는 여러개가 있습니다. 그중에서 왜 type만 선택 창에 나오나요?</p>
+<p>type 변수는 factor 유형입니다. 빈도는 factor 유형의 변수만 셀 수 있기 때문입니다.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="statistics.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">str</span>(Prestige) <span class="co"># Prestige 데이터셋의 변수 유형 살펴보기</span></span></code></pre></div>
+</div>
+<div id="관측-결측치-셈하기-summaries-count-missing-observations" class="section level3" number="7.1.4">
+<h3>
+<span class="header-section-number">7.1.4</span> 관측 결측치 셈하기 / Summaries &gt; Count missing observations<a class="anchor" aria-label="anchor" href="#%EA%B4%80%EC%B8%A1-%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%85%88%ED%95%98%EA%B8%B0-summaries-count-missing-observations"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-missing-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>데이터셋을 구성하는 사례에 값이 입력되지 않은 결측치가 있는 경우가 있다. 어떤 변수에 관측값이 없는 결측치가 있는지를 확인할 때 사용하는 기능이다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-missing-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>Prestige 데이터셋의 type 변수에 결측치가 4개가 있음을 확인한다.</p>
+</div>
+<div id="통계표-summaries-table-of-statistics" class="section level3" number="7.1.5">
+<h3>
+<span class="header-section-number">7.1.5</span> 통계표…/ Summaries &gt; Table of statistics…<a class="anchor" aria-label="anchor" href="#%ED%86%B5%EA%B3%84%ED%91%9C-summaries-table-of-statistics"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-tabulation-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>통계표(Table of statistics)는 요인(factor) 변수 유형별로 수치형(numeric, integer) 변수의 통계량을 계산하여 출력한다. Prestige 데이터셋에서 직업 유형의 type 변수를 요인에서 선택하고, 직업 유형별로 권위(prestige)의 통계량 중에서 기본 설정으로 선택된 평균값의 통계표를 선택하고, 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-tabulation-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<div class="figure">
+<img src="fig/statistics-summary-tabulation-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>직업 유형(bc, prof, wc)별로 평균값을 계산하여 출력한다. 출력창을 보면 Tapply() 함수를 사용함을 알 수 있다.</p>
+</div>
+<div id="상관-행렬-summaries-correlation-matrix" class="section level3" number="7.1.6">
+<h3>
+<span class="header-section-number">7.1.6</span> 상관 행렬…/ Summaries &gt; Correlation matrix…<a class="anchor" aria-label="anchor" href="#%EC%83%81%EA%B4%80-%ED%96%89%EB%A0%AC-summaries-correlation-matrix"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-correlation-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>상관 행렬은 두개 이상의 변수를 선택해야 한다. Prestige 데이터셋에서 교육수준과 연봉(수입)의 관계에 대한 관심에서 이 두 변수를 선택하고, 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-correlation-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<div class="figure">
+<img src="fig/statistics-summary-correlation-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>출력 창을 보면, cor() 함수가 사용되었음을 알 수 있다.</p>
+</div>
+<div id="상관-검정-summaries-correlation-test" class="section level3" number="7.1.7">
+<h3>
+<span class="header-section-number">7.1.7</span> 상관 검정…/ Summaries &gt; Correlation test…<a class="anchor" aria-label="anchor" href="#%EC%83%81%EA%B4%80-%EA%B2%80%EC%A0%95-summaries-correlation-test"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-corrtest-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>상관 검정은 두 변수를 구성하는 사례값들 사이에 어떤 방향의 관계성이 있는지를 통계학적으로 확인하고자 할 때 사용한다. 아래는Prestige 데이터셋에서 교육수준과 수입(연봉) 사이에 어떤 관계성이 있는지를 확인하고자 한다. education과 income 변수를 선택하고, 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-corrtest-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>상관의 유형 중에서 Pearson product-moment (피어슨 적률상관), 대립 가설에는 양측이 기본으로 설정되어 있다. 이 설정을 바탕으로 상관 검증의 결과를 출력하면 아래와 같다:</p>
+<div class="figure">
+<img src="fig/statistics-summary-corrtest-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>cor.test() 함수를 활용한다.</p>
+</div>
+<div id="정규성-검정-summaries-test-of-normality" class="section level3" number="7.1.8">
+<h3>
+<span class="header-section-number">7.1.8</span> 정규성 검정…/ Summaries &gt; Test of normality…<a class="anchor" aria-label="anchor" href="#%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95-summaries-test-of-normality"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-summary-normality-01.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>수치형(numeric, integer) 변수들 중에서 하나를 선택한다. 기본 설정에 Shapiro-Wilk의 정규성 검정법이 선택되어 있다. 수입(연봉)의 사례들이 정규 분포를 이루고 있는가를 확인하고자, 변수 income을 선택하고 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-normality-02.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<p>normalityTest()를 사용한다.</p>
+<div class="figure">
+<img src="fig/statistics-summary-normality-03.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">normalityTest</span><span class="op">(</span><span class="op">~</span><span class="va">education</span>, test<span class="op">=</span><span class="st">"shapiro.test"</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-summary-normality-04.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
+</div>
+</div>
+</div>
+<div id="분할표-contingency-tables" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> 분할표 / Contingency tables<a class="anchor" aria-label="anchor" href="#%EB%B6%84%ED%95%A0%ED%91%9C-contingency-tables"><i class="fas fa-link"></i></a>
+</h2>
+<div id="분할표-contingency-tables-1" class="section level3" number="7.2.1">
+<h3>
+<span class="header-section-number">7.2.1</span> 분할표 / Contingency tables<a class="anchor" aria-label="anchor" href="#%EB%B6%84%ED%95%A0%ED%91%9C-contingency-tables-1"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-contingency-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>분석대상인 데이터셋에 요인형 변수가 한개 있거나, 하나도 없는 경우 분할표 메뉴의 오른쪽에 있는 ,  기능은 불활성 음영 표시로 나타난다. 두개 이상의 요인형 변수가 있는 경우, 예를 들어 car 패키지에 포함된 Moore 데이터셋이 활성 데이터셋이 되는 경우 불활성 음영 표시가 사라진다.</p>
+<div class="figure">
+<img src="fig/statistics-contingency-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>요인형 변수가 세개 이상 있는 경우,  까지 활성화된다. 아래의 화면을 보면, partner.status, fcatetory 두개의 변수가 요인(factor)형이다. 는 활성화된 반면에,  기능이 아직 활성화되지 않았다면, 요인형 변수가 두개 뿐인 데이터셋임을 간접적으로 알려준다.</p>
+<div class="figure">
+<img src="fig/statistics-contingency-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="이원표-contingency-tables-two-way-table" class="section level3" number="7.2.2">
+<h3>
+<span class="header-section-number">7.2.2</span> 이원표…/ Contingency tables &gt; Two-way table<a class="anchor" aria-label="anchor" href="#%EC%9D%B4%EC%9B%90%ED%91%9C-contingency-tables-two-way-table"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-two-way-table-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>두개 이상의 요인형 변수를 가지고 있는 Moore 데이터셋을 활성화시키면, 의 음영이 사라지고 사용할 수 있는 기능이 된다.</p>
+<div class="figure">
+<img src="fig/statistics-two-way-table-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>행 변수와 열 변수에 요인형 변수 하나씩을 선택한다.</p>
+<div class="figure">
+<img src="fig/statistics-two-way-table-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="figure">
+<img src="fig/statistics-two-way-table-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>데이터 창과 함께 통계 창이 있다. 통계 창을 선택하면 다음과 같은 화면에 다양한 선택 기능을 선택할 수 있다. 다른 선택으로 출력 내용의 변화를 주지 않을 경우, 데이터 창으로 돌아가서 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/statistics-two-way-table-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>다음과 같은 출력물을 볼 수 있다. 행 변수에 partner.status, 열 변수에 fcategory를 선택한 경우의 출력물이다.</p>
+<div class="figure">
+<img src="fig/statistics-two-way-table-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>행 변수에 fcategory, 열 변수에 partner.status를 선택한 경우의 출력물이다.</p>
+<div class="figure">
+<img src="fig/statistics-two-way-table-07.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>프롬프트의 입력 스크립트를 살펴보면, xtabs() 함수를 사용하는 것이 보인다.</p>
+</div>
+</div>
+<div id="평균-means" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> 평균 / Means<a class="anchor" aria-label="anchor" href="#%ED%8F%89%EA%B7%A0-means"><i class="fas fa-link"></i></a>
+</h2>
+<div id="일-표본-t-검정-means-single-sample-t-test" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> 일-표본 t-검정… / Means &gt; Single-sample t-test…<a class="anchor" aria-label="anchor" href="#%EC%9D%BC-%ED%91%9C%EB%B3%B8-t-%EA%B2%80%EC%A0%95-means-single-sample-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-means-oneway-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>datasets 패키지에 있는 <a href="https://rcmdr.tistory.com/132">sleep 데이터셋</a>을 활용해보자.</p>
+<p>&lt;일-표본 t-검정…&gt; 기능을 선택하면, 아래와 같은 선택 창으로 넘어간다.</p>
+<p>sleep 데이터셋에서 일-표본 t-검정으로 점검할 수 있는 변수는 extra 하나가 보인다. 예(OK) 버튼을 누르자.</p>
+<div class="figure">
+<img src="fig/statistics-means-oneway-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">sleep</span>, <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">extra</span>, alternative<span class="op">=</span><span class="st">'two.sided'</span>, mu<span class="op">=</span><span class="fl">0.0</span>, conf.level<span class="op">=</span><span class="fl">.95</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>에 관련된 선택사항에 변화를 주지 않았다. 아래 명령문과 같은 결과를 얻는다.</p>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="fl">1</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-means-oneway-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="독립-표본-t-검정-means-independent-samples-t-test" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> 독립 표본 t-검정…/ Means &gt; Independent samples t-test…<a class="anchor" aria-label="anchor" href="#%EB%8F%85%EB%A6%BD-%ED%91%9C%EB%B3%B8-t-%EA%B2%80%EC%A0%95-means-independent-samples-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-means-ttest-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>datasets 패키지에 있는 <a href="https://rcmdr.tistory.com/132">sleep 데이터셋</a>을 활용해보자. 활성화시키자.</p>
+<p>sleep 데이터셋의 수치형 변수 extra에 대하여 2개의 수준을 가진 요인형 집단인 group 변수의 t-검정을 한다.</p>
+<div class="figure">
+<img src="fig/statistics-means-ttest-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p> 창에는 1그룹과 2그룹의 차이를 비교하는 , ,  의 선택 사항이 있다. 일단 기본 선택 들을 사용하자.</p>
+<div class="figure">
+<img src="fig/statistics-means-ttest-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>t.test(extra~group, alternative=‘two.sided,’ conf.level=.95, var.equal=FALSE, data=sleep)
+alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 다음과 같은 결과를 갖는다.</p>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-means-ttest-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>참고로 group1 과 group2의 사례들을 상자그림(boxplot)을 이용하여 비교해보자.</p>
+<div class="figure">
+<img src="fig/statistics-means-ttest-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>한편, 비교하는 두 집단의 분산의 차이가 없다는 것을 먼저 확인한 경우에 진행하는 t-검정도 있을 수 있다. 통계 &gt; 분산 &gt; 이-분산 F-검정의 결과를 바탕으로 <a href="https://rcmdr.tistory.com/136">독립-표본 t-검정</a>을 진행하는 사례이다.</p>
+<p> 창에서 &lt;등분산을 가정합니까?&gt;에 ’예’를 선택한다.</p>
+<div class="figure">
+<img src="fig/statistics-means-ttest-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">extra</span><span class="op">~</span><span class="va">group</span>, alternative<span class="op">=</span><span class="st">'two.sided'</span>, 
+    conf.level<span class="op">=</span><span class="fl">.95</span>, var.equal<span class="op">=</span><span class="cn">TRUE</span>, data<span class="op">=</span><span class="va">sleep</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-means-ttest-07.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="paired-t-검정-means-paired-t-test" class="section level3" number="7.3.3">
+<h3>
+<span class="header-section-number">7.3.3</span> Paired t-검정…/ Means &gt; Paired t-test…<a class="anchor" aria-label="anchor" href="#paired-t-%EA%B2%80%EC%A0%95-means-paired-t-test"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-means-paired-ttest-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>datasets 패키지에 포함된 sleep 데이터셋에는 extra라는 수치형 변수가 포함되어 있다. 수치형 변수가 하나만 있는 경우는 Paired t-검정을 사용할 수 없다. 10명이 각각 2개의 약을 복용한 후 group1, group2라는 집단 안에서 수면 시간의 변화를 측정한 데이터셋이다. reshape(), reshapeL2W() 등의 함수를 사용하여 extra라는 수치형 변수를 group1 , group2 별로 두개의 수치형 변수로 변환시켜야 한다. 변환이 되면 &lt;Statistics : Means : Paired t-test&gt; 기능이 활성화된다.</p>
+<div class="figure">
+<img src="fig/statistics-means-paired-ttest-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>extra 변수를 두개의 집단 X1, X2 로 이미 나눈 상황이다. X1과 X2를 각각 와 에 선택하자.</p>
+<div class="figure">
+<img src="fig/statistics-means-paired-ttest-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>창 추가 선택 사항들이 있다. 기본 선택을 이용하자.</p>
+<div class="figure">
+<img src="fig/statistics-means-paired-ttest-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">sleepWide</span>, <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">X1</span>, <span class="va">X2</span>, alternative<span class="op">=</span><span class="st">'two.sided'</span>, conf.level<span class="op">=</span><span class="fl">.95</span>, paired<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>아래의 함수 사용과 같은 결과를 얻는다.</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Pair.html">Pair</a></span><span class="op">(</span><span class="va">X1</span>, <span class="va">X2</span><span class="op">)</span> <span class="op">~</span> <span class="fl">1</span>, data <span class="op">=</span> <span class="va">sleepWide</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-means-paired-ttest-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="일원-분산-분석-means-one-way-anova" class="section level3" number="7.3.4">
+<h3>
+<span class="header-section-number">7.3.4</span> 일원 분산 분석…/ Means &gt; One-way ANOVA…<a class="anchor" aria-label="anchor" href="#%EC%9D%BC%EC%9B%90-%EB%B6%84%EC%82%B0-%EB%B6%84%EC%84%9D-means-one-way-anova"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-means-anova-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>datasets 패키지에 있는 <a href="https://rcmdr.tistory.com/132">sleep 데이터셋</a>을 활용해보자.</p>
+<p>&lt;집단 (하나 선택)&gt;에 요인형 변수 group을, &lt;반응 변수 (하나 선택)&gt;에 수치형 변수 extra를 선택한다. 통계 &gt; 분산 &gt; 이-분산 F-검정을 통하여 비교되는 두 집단의 extra 변수의 사례 분포는 등분산임을 알고 있는 상황이다.</p>
+<ul>
+<li><a href="https://rcmdr.tistory.com/136">Two variances F-test…</a></li>
+</ul>
+<div class="figure">
+<img src="fig/statistics-means-anova-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">AnovaModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span>, data<span class="op">=</span><span class="va">sleep</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">AnovaModel.1</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">sleep</span>, <span class="fu">numSummary</span><span class="op">(</span><span class="va">extra</span>, groups<span class="op">=</span><span class="va">group</span>, statistics<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean"</span>, <span class="st">"sd"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>일원 분산 분석의 명령문 작성과 분석 결과는 아래와 같다.</p>
+<div class="figure">
+<img src="fig/statistics-means-anova-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>추가로 carData 패키지의 Prestige 데이터셋을 이용하여 일원 분산 분석을 연습해보자. Prestige 데이터셋에는 type 이라는 요인형 변수가 있다. 그러나 앞서 연습한 sleep 데이터셋의 group 변수처럼 요인 수준이 두개가 아니라 요인의 수준이 셋이다. 직업의 사회적 권위에 대한 직업 유형별 (bc, prof, wc) 평균의 차이가 있는가를 점검한다.</p>
+<div class="figure">
+<img src="fig/statistics-means-anova-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">AnovaModel.3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">AnovaModel.3</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">numSummary</span><span class="op">(</span><span class="va">prestige</span>, groups<span class="op">=</span><span class="va">type</span>, statistics<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean"</span>, <span class="st">"sd"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>직업유형 (bc, prof, wc)에 따른 직업의 사회적 권위는, 각 유형별 평균을 비교할 때, 차이가 있다는 결과를 얻는다.</p>
+<div class="figure">
+<img src="fig/statistics-means-anova-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="다원-분산-분석-means-multi-way-anova" class="section level3" number="7.3.5">
+<h3>
+<span class="header-section-number">7.3.5</span> 다원 분산 분석…/ Means &gt; Multi-way ANOVA…<a class="anchor" aria-label="anchor" href="#%EB%8B%A4%EC%9B%90-%EB%B6%84%EC%82%B0-%EB%B6%84%EC%84%9D-means-multi-way-anova"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/statistics-means-multiway-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>다중 분산 분석 (Multi-way ANOVA)은 두개 이상의 요인형 변수들의 작용으로 하나의 수치형 변수에 영향을 주었는가를 점검하는 통계기법이다.</p>
+<div class="figure">
+<img src="fig/statistics-means-multiway-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Adler</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"Adler"</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span>
+
+<span class="va">AnovaModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">rating</span> <span class="op">~</span> <span class="va">expectation</span><span class="op">*</span><span class="va">instruction</span>, data<span class="op">=</span><span class="va">Adler</span>, contrasts<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>expectation 
+  <span class="op">=</span><span class="st">"contr.Sum"</span>, instruction <span class="op">=</span><span class="st">"contr.Sum"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">Anova</span><span class="op">(</span><span class="va">AnovaModel.1</span><span class="op">)</span>
+<span class="fu">Tapply</span><span class="op">(</span><span class="va">rating</span> <span class="op">~</span> <span class="va">expectation</span> <span class="op">+</span> <span class="va">instruction</span>, <span class="va">mean</span>, na.action<span class="op">=</span><span class="va">na.omit</span>, data<span class="op">=</span><span class="va">Adler</span><span class="op">)</span> <span class="co"># means</span>
+<span class="fu">Tapply</span><span class="op">(</span><span class="va">rating</span> <span class="op">~</span> <span class="va">expectation</span> <span class="op">+</span> <span class="va">instruction</span>, <span class="va">sd</span>, na.action<span class="op">=</span><span class="va">na.omit</span>, data<span class="op">=</span><span class="va">Adler</span><span class="op">)</span> <span class="co"># std. deviations</span>
+<span class="fu"><a href="https://rdrr.io/r/stats/xtabs.html">xtabs</a></span><span class="op">(</span><span class="op">~</span> <span class="va">expectation</span> <span class="op">+</span> <span class="va">instruction</span>, data<span class="op">=</span><span class="va">Adler</span><span class="op">)</span> <span class="co"># counts</span></code></pre></div>
+<div class="figure">
+<img src="fig/statistics-means-multiway-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></div>
+<div class="next"><a href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">8</span> 도구 / Tools</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#statistics"><span class="header-section-number">7</span> 통계 / Statistics</a></li>
+<li>
+<a class="nav-link" href="#%EC%9A%94%EC%95%BD-statistics-summaries"><span class="header-section-number">7.1</span> 요약 / Statistics &gt; Summaries</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%ED%99%9C%EC%84%B1-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-summaries-active-data-set"><span class="header-section-number">7.1.1</span> 활성 데이터셋 / Summaries &gt; Active Data set</a></li>
+<li><a class="nav-link" href="#%EC%88%98%EC%B9%98%EC%A0%81-%EC%9A%94%EC%95%BD-statistics-summaries-numeric-summaries"><span class="header-section-number">7.1.2</span> 수치적 요약…/ Statistics &gt; Summaries &gt; Numeric summaries…</a></li>
+<li><a class="nav-link" href="#%EB%B9%88%EB%8F%84-%EB%B6%84%ED%8F%AC-summaries-frequency-distributions"><span class="header-section-number">7.1.3</span> 빈도 분포… / Summaries &gt; Frequency distributions…</a></li>
+<li><a class="nav-link" href="#%EA%B4%80%EC%B8%A1-%EA%B2%B0%EC%B8%A1%EC%B9%98-%EC%85%88%ED%95%98%EA%B8%B0-summaries-count-missing-observations"><span class="header-section-number">7.1.4</span> 관측 결측치 셈하기 / Summaries &gt; Count missing observations</a></li>
+<li><a class="nav-link" href="#%ED%86%B5%EA%B3%84%ED%91%9C-summaries-table-of-statistics"><span class="header-section-number">7.1.5</span> 통계표…/ Summaries &gt; Table of statistics…</a></li>
+<li><a class="nav-link" href="#%EC%83%81%EA%B4%80-%ED%96%89%EB%A0%AC-summaries-correlation-matrix"><span class="header-section-number">7.1.6</span> 상관 행렬…/ Summaries &gt; Correlation matrix…</a></li>
+<li><a class="nav-link" href="#%EC%83%81%EA%B4%80-%EA%B2%80%EC%A0%95-summaries-correlation-test"><span class="header-section-number">7.1.7</span> 상관 검정…/ Summaries &gt; Correlation test…</a></li>
+<li><a class="nav-link" href="#%EC%A0%95%EA%B7%9C%EC%84%B1-%EA%B2%80%EC%A0%95-summaries-test-of-normality"><span class="header-section-number">7.1.8</span> 정규성 검정…/ Summaries &gt; Test of normality…</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%EB%B6%84%ED%95%A0%ED%91%9C-contingency-tables"><span class="header-section-number">7.2</span> 분할표 / Contingency tables</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EB%B6%84%ED%95%A0%ED%91%9C-contingency-tables-1"><span class="header-section-number">7.2.1</span> 분할표 / Contingency tables</a></li>
+<li><a class="nav-link" href="#%EC%9D%B4%EC%9B%90%ED%91%9C-contingency-tables-two-way-table"><span class="header-section-number">7.2.2</span> 이원표…/ Contingency tables &gt; Two-way table</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%ED%8F%89%EA%B7%A0-means"><span class="header-section-number">7.3</span> 평균 / Means</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EC%9D%BC-%ED%91%9C%EB%B3%B8-t-%EA%B2%80%EC%A0%95-means-single-sample-t-test"><span class="header-section-number">7.3.1</span> 일-표본 t-검정… / Means &gt; Single-sample t-test…</a></li>
+<li><a class="nav-link" href="#%EB%8F%85%EB%A6%BD-%ED%91%9C%EB%B3%B8-t-%EA%B2%80%EC%A0%95-means-independent-samples-t-test"><span class="header-section-number">7.3.2</span> 독립 표본 t-검정…/ Means &gt; Independent samples t-test…</a></li>
+<li><a class="nav-link" href="#paired-t-%EA%B2%80%EC%A0%95-means-paired-t-test"><span class="header-section-number">7.3.3</span> Paired t-검정…/ Means &gt; Paired t-test…</a></li>
+<li><a class="nav-link" href="#%EC%9D%BC%EC%9B%90-%EB%B6%84%EC%82%B0-%EB%B6%84%EC%84%9D-means-one-way-anova"><span class="header-section-number">7.3.4</span> 일원 분산 분석…/ Means &gt; One-way ANOVA…</a></li>
+<li><a class="nav-link" href="#%EB%8B%A4%EC%9B%90-%EB%B6%84%EC%82%B0-%EB%B6%84%EC%84%9D-means-multi-way-anova"><span class="header-section-number">7.3.5</span> 다원 분산 분석…/ Means &gt; Multi-way ANOVA…</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-16.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
