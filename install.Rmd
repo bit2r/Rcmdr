@@ -21,3 +21,18 @@
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iapfZ7QSRSA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## 윈도우즈
+
+1. R 설치 [다운로드](https://www.r-project.org/)
+1. 바탕화면 `R x64 4.*.*` 아이콘 더블클릭 R 실행
+    - R 명령 프롬프트에서 `install.packages("Rcmdr", dep = TRUE)` 실행
+    - `Rcmdr` 패키지를 다운로드 받을 CRAN mirror를 선택 (예를 들어, `0-Cloud [https]`)
+    - R 명령 프롬프트에서 `library(Rcmdr)` 실행
+    
+    
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p6hl3jFdjio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    
+    

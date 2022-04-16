@@ -14,9 +14,12 @@ rmd_files: [
 
   "install.Rmd",
   "file.Rmd",
-  # "tools.Rmd",
-  # "help.Rmd",
-  # "datasets.Rmd"
+  "edit.Rmd",
+  "distribution.Rmd",
+  "tools.Rmd",
+  "help.Rmd",
+  "datasets.Rmd",
+  "references.Rmd"
 
 ]
 
