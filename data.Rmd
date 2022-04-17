@@ -1,6 +1,6 @@
 # 데이터 / Data {#data}
 
-## 새로운 데이터셋.../ Data > New data set...
+## 새로운 데이터셋.../ New data set...
 
  
 ![Windows 사례](fig/data-new-data-01.png)
@@ -28,7 +28,7 @@ Tcl package 'Tktable' must be installed first 라는 오류 메세지가 뜰 수
 
 `sudo apt install tktable*`로 시스템에 추가 패키지를 설치하고, 다시 R 과 R Commander를 실행하면 테이블 형태의 새로운 데이터셋 (데이터프레임)을 만들 새로운 창이 뜬다. 행과 열을 추가하거나 지우고, 사례의 이름과 값을 넣고 지우는 방식으로 데이터셋을 만들 수 있다.
 
-## 데이터셋 탑재하기... / Data > Load data set...
+## 데이터셋 탑재하기... / Load data set...
 
 ![linux 사례 (Ubuntu 18.04)](fig/data-load-01.png)
  
@@ -37,7 +37,7 @@ Tcl package 'Tktable' must be installed first 라는 오류 메세지가 뜰 수
  
 ![linux 사례 (Ubuntu 18.04)](fig/data-load-02.png)
 
-## 데이터 > 데이터셋 병합하기... / Data > Merge data sets...
+## 데이터 > 데이터셋 병합하기... / Merge data sets...
 
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-merge-01.png) 
@@ -78,7 +78,7 @@ MergedDataset <- mergeRows(Prestige.sub1, Prestige.sub2, common.only=FALSE)
 
 ## 데이터 가져오기 / Import data
 
-### 엑셀 파일 / Import data > from EXCEL file...
+### 엑셀 파일 / from EXCEL file...
 
 
 Microsoft사의 Office 제품에 포함된 EXCEL은 광범위하게 사용되는 수치정보 관리 및 시각화 툴이다. 관리/재무 정보를 다루는 수많은 기업과 개인이 사용하기 때문에 R 사용자가 엑셀의 .xls, 또는 .xlsx 파일을 불러오는 요구는 매우 크다. 관심사가 크기 때문일까, R에서 EXCEL파일을 불러오기 위해서 개발자들이 만든 기여패키자들도 많다. R Commander에서 EXCEL파일을 불러오기 위하여 사용하는 외부 패키지도 변해왔다. 2019년 5월 현재는 readxl 이라는 패키지이다.
@@ -87,19 +87,19 @@ Microsoft사의 Office 제품에 포함된 EXCEL은 광범위하게 사용되는
 
 - EXCEL은 다른 통계분석툴과 달리 데이터 프레임화에 필요한 변수명에 대한 강한 규칙을 갖고 있지 않다. 따라서 R Commander의 기본 설정은 선택된 sheet의 첫 행의 정보를 변수 정보로 활용하는 것이다.
 
-### STATA 데이터 / Import data > from STATA data set...
+### STATA 데이터 / from STATA data set...
 
 
 STATA는 사회과학분야의 고급통계문화에서 많이 사용하는 분석툴중 하나이다. SPSS처럼 문자 변수를 요인화시키는 것이 기본 설정이다. 
 날짜를 R 형식으로 전환하는 것이 기본 설정이다. (추후 논의하겠다)
 
-### 미니탭 데이터 / Import data > from Minitab data set...
+### 미니탭 데이터 / from Minitab data set...
 
-### SAS 데이터 / Import data >from SAS b7dat file...
+### SAS 데이터 / from SAS b7dat file...
 
-### SAS 데이터 / Import data > from SAS xport file...
+### SAS 데이터 / from SAS xport file...
 
-### SPSS 데이터 / Import data > from SPSS data set...
+### SPSS 데이터 / from SPSS data set...
 
 - 데이터셋의 기본이름은 Dataset으로 되어있다. 원하는 (영문)이름으로 바꿀 수 있다.
 
@@ -111,7 +111,7 @@ SPSS라는 인기있는 GUI 사회과학 통계분석툴이 있다. 70년대 초
 요인형으로 바꾸는 이유는 시각화 작업과도 연관성이 크다. R에서 시각화되는 정보는 수치형과 요인형이다. 수치형은 연속형 자료로, 요인형은 이산형 자료로 시각화되기 때문에, plot()로 호출되는 방식이 크게 다르다. 문자형을 요인형으로 바꾼다는 것은 곧 시각화 준비를 마쳤다는 의미이기도 하다.
 
 
-### 데이터 > 데이터 불러오기 > 텍스트 파일, 클립보드 또는 URL에서.../ Import data > from text file, clipboard, or URL...
+### 텍스트 파일, 클립보드 또는 URL에서.../ from text file, clipboard, or URL...
 
 ![Linux 사례 (MX 21)](fig/data-import-01.png)
 
@@ -160,7 +160,7 @@ Nations <- read.table("/home/jhshin/다운로드/Rcmdr/inst/etc/Nations.txt", he
 
 ## 패키지 데이터 / Data in packages   
 
-### 패키지의 데이터셋 목록 / Data in packages > List data sets in packages
+### 패키지의 데이터셋 목록 / List data sets in packages
 
  
 ![Windows 사례](fig/data-pkg-01.png)
@@ -172,7 +172,7 @@ R과 Rcmdr에서 불러온 패키지에 담겨있는 데이터셋의 목록을 �
  
 ![Windows 사례](fig/data-pkg-02.png)
 
-### 첨부된 패키지에서 데이터셋 읽기.../ Data in packages > Read data set from an attached package...
+### 첨부된 패키지에서 데이터셋 읽기.../ Read data set from an attached package...
 
 ![Windows 사례](fig/data-pkg-data-01.png) 
 
@@ -196,9 +196,9 @@ R에는 많은 예제 데이터셋이 있다. 대부분의 패키지들에 예�
 
 ![Windows 사례](fig/data-pkg-data-04.png) 
 
-## 데이터 활성 데이터셋 / Data > Active data set ...
+## 데이터 활성 데이터셋 / Active data set ...
 
-### 활성 데이터셋 > 데이터 보기.../ Active data set > View data...
+### 데이터 보기.../ View data...
 
 메모리로 불러온 데이터의 내부 값들을 볼 때 사용한다.  데이터프레임화 된 객체 전체를 보거나, 일부 변수들만 추려서 볼 수도 있다.
 
@@ -234,7 +234,7 @@ relimp::showData()
 
 ![Windows 사례 (10 Pro)](fig/data-active-view-07.png)  
 
-### 활성화된 데이터셋 선택하기.../ Active data set > Select active data set...
+### 활성화된 데이터셋 선택하기.../ Select active data set...
 
 
 메모리에 여러개의 데이터셋이 올려져 있을 수 있다. 그 중 하나를 선택하는 기능이다. 여러 개의 데이터셋에서 하나를 선택한다는 것은 그 데이터셋을 갖고 분석 작업을 수행하겠다는 것으로 이해할 수 있다. 그 과정에서 매번 그 데이터셋을 지정할 필요가 없다는 것이다.
@@ -269,7 +269,7 @@ R Commander 화면에서 R 아이콘 옆에 '데이터셋: Prestige' 이 뜬다.
 
 ![Linux 사례 (MX 21)](fig/data-active-select-08.png)
 
-### 활성 데이터셋 다시활력넣기(refresh) / Active data set > Refresh active data set
+### 활성 데이터셋 다시활력넣기(refresh) / Refresh active data set
 
 
 메모리에 올려진 데이터셋으로 작업하는 경우, 변수와 사례를 추가/삭제하는 경우가 빈번하게 발생한다. 줄여 말하면, 벡터를 만들거나 삭제할 수 있다. 이 경우, 작업이 진행된 객체의 '현재' 정보가 필요한 경우가 있다. 객체의 행과 열, 변수와 사례의 갯수를 업데이터해서 메세지로 알려준다.
@@ -277,7 +277,7 @@ R Commander 화면에서 R 아이콘 옆에 '데이터셋: Prestige' 이 뜬다.
  
 ![Linux 사례 (MX 21)](fig/data-active-refresh.png)
 
-### 활성 데이터셋에 관한 도움말 (만약 이용가능하다면) / Active data set > Help on active data set (if available)
+### 활성 데이터셋에 관한 도움말 (만약 이용가능하다면) / Help on active data set (if available)
 
  
 
@@ -303,7 +303,7 @@ help(Prestige)
 
 아래의 참고사항은 Prestige 데이터셋과 유사하게, carData 패키지에 담겨있는 DavisThin 데이터셋이다. 같은 방식으로 연습할 수 있다. [DavisThin 데이터셋](https://rcmdr.tistory.com/141)
 
-### 활성 데이터셋의 변수 / Active data set > Variables in active data set
+### 활성 데이터셋의 변수 / Variables in active data set
 
 활성 데이터셋으로 불러온 데이터프레임에는 사례값들을 가지는 변수가 있을 것이다. 변수이름을 목록화시켜 보여주는 기능이다. 예제용 데이터셋은 핵심적인 목적을 위하여 정제된 경우가 대부분이기 때문에 이 기능이 큰 효과를 가지지 않는다. 하지만, 백 개 이상의 변수를 가진 데이터들도 흔한 상황에서 분석을 위한 데이터셋을 불러온 경우, 그리고 변수들이 많은 경우, 이 기능은 효과적으로 사용될 수 있다.
 
@@ -321,7 +321,7 @@ names(Prestige)
 
 > `names(데이터셋)`
 
-### 사례 이름 정하기... / Active data set > Set case names...
+### 사례 이름 정하기... / Set case names...
 
 
 활성 데이터셋으로 사용되는 데이터프레임은 행과 열을 갖는다. 변수이름이 열을 대표한다. 행의 경우, 일련번호로 사례를 대표하기도하고 고유한 이름을 붙이기도 한다. 이 기능은 행의 이름을 지정하는 것이다. 
@@ -769,7 +769,7 @@ write.table(x, file = "", append = FALSE, quote = TRUE, sep = " ",
 
 ## 활성 데이터셋 변수 관리 / Manage variables in active data set
 
-### 변수를 다시 코딩하기.../ Manage variables in active data set > Recode variables...
+### 변수를 다시 코딩하기.../ Recode variables...
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-01.png)
 
@@ -810,7 +810,7 @@ Prestige 데이터셋에 있는 수치형 변수 education, income을 구간을 
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-manage-variable-04.png)
 
-### 새로운 변수 계산하기.../ Manage variables in active data set > Compute new variable...
+### 새로운 변수 계산하기.../ Compute new variable...
 
  
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-mutate-01.png)
@@ -827,7 +827,7 @@ Prestige 데이터셋에 있는 income 변수를 log를 이용하여 변환해�
 
 > Prestige$income.log <- with(Prestige, log(income))
 
-### 관찰 수를 데이터셋에 더하기 / Manage variables in active data set > Add observation number to data set
+### 관찰 수를 데이터셋에 더하기 / Add observation number to data set
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-add-rows-01.png) 
 
@@ -840,7 +840,7 @@ Prestige 데이터셋에 있는 income 변수를 log를 이용하여 변환해�
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-add-rows-02.png) 
 
-### 변수 표준화하기.../ Manage variables in active data set > Standardize variables...
+### 변수 표준화하기.../ Standardize variables...
 
  
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-standardize-01.png)
@@ -876,7 +876,7 @@ R Commander에 있는 <데이터셋 보기> 버튼을 눌러 Prestige 데이터�
 
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-standardize-03.png)
 
-### 수치 변수를 요인으로 변환하기.../ Manage variables in active data set > Convert numeric variable to factor...
+### 수치 변수를 요인으로 변환하기.../ Convert numeric variable to factor...
 
 ![Windows 사례](fig/data-active-convert-factor-01.png)
 
@@ -906,7 +906,7 @@ airquality <- within(airquality, { month.f <- as.factor(Month) })
 
 ![Linux 사례 (MX 21)](fig/data-active-convert-factor-03.png)
 
-### 문자 변수를 요인으로 변환하기.../ Manage variables in active data set > Convert character variables to factors...
+### 문자 변수를 요인으로 변환하기.../ Convert character variables to factors...
 
 ![Linux 사례 (MX 21)](fig/data-active-convert-character-01.png)
 
@@ -955,7 +955,7 @@ Prestige_csv <- within(Prestige_csv, { type.f <- as.factor(type) })
 
 ![Linux 사례 (MX 21)](fig/data-active-convert-character-06.png)
 
-### 수치 변수 구간만들기.../ Manage variables in active data set > Bin a numeric variable...
+### 수치 변수 구간만들기.../ Bin a numeric variable...
 
 ![Linux 사례 (MX 21)](fig/data-active-bin-01.png)
 
@@ -987,7 +987,7 @@ income.bin1, income.bin2, income.bin3 등 세개의 income 변수 구간화 작�
 
 ![Linux 사례 (MX 21)](fig/data-active-bin-06.png)
 
-### 요인 수준 재정렬하기.../ Manage variables in active data set > Reorder factor levels...
+### 요인 수준 재정렬하기.../ Reorder factor levels...
 
 ![Linux 사례 (MX 21)](fig/data-active-reorder-01.png) 
 
@@ -1027,7 +1027,7 @@ str(Prestige$type2)
 ![Linux 사례 (MX 21)](fig/data-active-reorder-06.png) 
 
 
-### 사용하지 않은 요인 수준 누락시키기.../ Manage variables in active data set > Drop unused factor levels...
+### 사용하지 않은 요인 수준 누락시키기.../ Drop unused factor levels...
 
 ![Linux 사례 (MX 21)](fig/data-active-drop-level-01.png) 
 
@@ -1076,7 +1076,7 @@ Prestige.sub1 <- within(Prestige.sub1, {
 
 ![Linux 사례 (MX 21)](fig/data-active-drop-level-06.png) 
 
-### 요인 대비 정의하기.../ Manage variables in active data set > Define contrasts for a factor...
+### 요인 대비 정의하기.../ Define contrasts for a factor...
 
 
 ![Linux 사례 (MX 21)](fig/data-active-contrast-01.png) 
@@ -1113,7 +1113,7 @@ R Commander 화면에서 <데이터셋 보기> 버튼을 누르면, 다음과 �
 
 ![Linux 사례 (MX 21)](fig/data-active-rename-05.png) 
 
-### 데이터셋에서 변수 지우기.../ Manage variables in active data set > delete variables from data set...
+### 데이터셋에서 변수 지우기.../ delete variables from data set...
 
  
 ![Linux 사례 (Ubuntu 18.04)](fig/data-active-delete-01.png)

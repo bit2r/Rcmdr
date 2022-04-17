@@ -1,9 +1,7 @@
 # 도구 / `Tools`
 
 
-## 도구 > 패키지 적재하기...
-
-`도구 > 패키지 적재하기... / Tools > Load package(s)...`
+## 패키지 적재하기.../ Load package(s)...`
 
 
 ![](fig/tools-load-pkg-01.png)
@@ -24,9 +22,7 @@ library(vcd) # 원하는 패키지 적재하기
 ![](fig/tools-load-pkg-03.png)
 
 
-## 도구 > Rcmdr 플러그인 적재하기...
-
-`도구 > Rcmdr 플러그인 적재하기... / Tools > Load Rcmdr plug-in(s)....`
+## Rcmdr 플러그인 적재하기.../ Load Rcmdr plug-in(s)....`
 
 ![](fig/tools-load-plugin-01.png)
 
@@ -53,9 +49,7 @@ Linux 사례 (MX 21)
 
 ![](fig/tools-load-plugin-05.png)
 
-## 도구 > 선택 기능...
-
-`도구 > 선택 기능... / Tools > Options...`
+## 선택 기능.../ Options...
 
 ![Linux 사례 (MX 21)](fig/tools-options-01.png)
 
