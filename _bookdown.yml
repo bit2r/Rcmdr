@@ -18,6 +18,8 @@ rmd_files: [
   "distribution.Rmd",
   "data.Rmd",
   "statistics.Rmd",
+  "graph.Rmd",
+  "models.Rmd",
   "tools.Rmd",
   "help.Rmd",
   "datasets.Rmd",

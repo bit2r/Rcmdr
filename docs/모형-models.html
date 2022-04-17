@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr</title>
+<meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
+<meta name="description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta property="og:type" content="book">
+<meta property="og:description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr">
+<meta name="twitter:description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">설치형 오픈 통계 패키지 - <code>Rcmdr</code></a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> 들어가며</a></li>
+<li><a class="" href="install.html"><span class="header-section-number">2</span> 설치</a></li>
+<li><a class="" href="%ED%8C%8C%EC%9D%BC-file.html"><span class="header-section-number">3</span> 파일 / File</a></li>
+<li><a class="" href="%ED%8E%B8%EC%A7%91-edit.html"><span class="header-section-number">4</span> 편집 / Edit</a></li>
+<li><a class="" href="%EB%B6%84%ED%8F%AC-distribution.html"><span class="header-section-number">5</span> 분포 / distribution</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">6</span> 데이터 / Data</a></li>
+<li><a class="" href="statistics.html"><span class="header-section-number">7</span> 통계 / Statistics</a></li>
+<li><a class="" href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html"><span class="header-section-number">8</span> 그래프 / Graph</a></li>
+<li><a class="active" href="%EB%AA%A8%ED%98%95-models.html"><span class="header-section-number">9</span> 모형 / models</a></li>
+<li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></li>
+<li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">11</span> 도움말 / Help</a></li>
+<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">12</span> 데이터셋 / datasets</a></li>
+<li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="모형-models" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9 . </span> 모형 / <code>models</code><a class="anchor" aria-label="anchor" href="#%EB%AA%A8%ED%98%95-models"><i class="fas fa-link"></i></a>
+</h1>
+<div id="활성-모델-선택하기-select-active-model" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> 활성 모델 선택하기…/ Select active model…<a class="anchor" aria-label="anchor" href="#%ED%99%9C%EC%84%B1-%EB%AA%A8%EB%8D%B8-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0-select-active-model"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/model-select-model-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R Commander에서는 분석과정에서 만들어진 여러개의 모델을 메모리에 상주시키고, 상황에 맞게 활용할 준비를 갖춘다. 아래의 명령문 프롬프트 창은 세개의 모델이 있음을 알린다. carData 패키지의 Prestige 데이터셋을 이용하여, 선형회귀, 선형모델 기법을 통하여 education(교육연수), income(연소득)이 prestige(직업의 사회적 권위)에 어떤 영향을 미치는가, 또 직업유형별로 차이가 있는가를 분석한다고 가정하자.</p>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span> <span class="co"># prestige <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="va">RegModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span><span class="op">~</span><span class="va">education</span><span class="op">+</span><span class="va">income</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span> <span class="co"># <ec>꽑<ed>삎<ed>쉶洹紐⑤뜽1</ed></ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">RegModel.1</span><span class="op">)</span>
+<span class="va">LinearModel.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># <ec>꽑<ed>삎紐⑤뜽1</ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.2</span><span class="op">)</span>
+<span class="va">LinearModel.4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="op">(</span><span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># <ec>꽑<ed>삎紐⑤뜽2</ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.4</span><span class="op">)</span></code></pre></div>
+<p>&lt;활성 모델 선택하기…&gt;기능을 선택하면 아래와 같은 모델 목록창이 등장한다. 목록에서 하나를 선택한다.</p>
+<div class="figure">
+<img src="fig/model-select-model-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="모델-요약하기-summarize-model" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> 모델 요약하기 / Summarize model<a class="anchor" aria-label="anchor" href="#%EB%AA%A8%EB%8D%B8-%EC%9A%94%EC%95%BD%ED%95%98%EA%B8%B0-summarize-model"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/model-summarize-01.png" alt=""><p class="caption">Linux 요약 (MX 21)</p>
+</div>
+<p>모델을 만들고, 모델의 요약 정보를 확인할 때 일반적으로 summary() 함수를 사용한다.</p>
+<p>carData 패키지의 Prestige 데이터셋으로 선형회귀, 선형모델을 만들었다고 하자. 이 과정에서 다음 사례와 같은 요약 정보가 생산된다:</p>
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.2</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-summarize-02.png" alt=""><p class="caption">Linux 요약 (MX 21)</p>
+</div>
+<p>여러개의 모델이 있고, 특정 모델의 요약정보를 다시 확인하고자 할 때 사용하는 기능이다.</p>
+<div class="figure">
+<img src="fig/model-summarize-03.png" alt=""><p class="caption">Linux 요약 (MX 21)</p>
+</div>
+<p>에 선택이 되어 있는 경우는 summary() 함수 대신 summarySandwich() 함수가 사용된다.</p>
+<div class="figure">
+<img src="fig/model-summarize-04.png" alt=""><p class="caption">Linux 요약 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">summarySandwich</span><span class="op">(</span><span class="va">LinearModel.2</span>, type<span class="op">=</span><span class="st">"hc3"</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-summarize-05.png" alt=""><p class="caption">Linux 요약 (MX 21)</p>
+</div>
+</div>
+<div id="모델-계수-비교하기-compare-model-coefficients" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> 모델 계수 비교하기…/ Compare model coefficients…<a class="anchor" aria-label="anchor" href="#%EB%AA%A8%EB%8D%B8-%EA%B3%84%EC%88%98-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0-compare-model-coefficients"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/model-compare-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>두개 이상의 모델을 선택하고 그 안에 포함된 계수(coefficients)를 비교하는 기능이다.</p>
+<p>carData 패키지에 있는 Prestige 데이터셋을 이용하여 income(연수입)과 education(교육연수)가 prestige(직업의 사회적 권위)에 미치는 영향에 대하여 분석한다고 가정하자. 최적의 모델을 찾기 위해서는 먼저 여러개의 모델을 만들어야 한다. 이 경우, 만들어진 여러개의 모델을 비교하는 과정에서 영향력이 통계적으로 지지되는 변수들을 찾고 또 그 계수에 대한 꼼꼼한 점검을 해야하는 경우가 많다.</p>
+<div class="figure">
+<img src="fig/model-compare-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">compareCoefs</span><span class="op">(</span><span class="va">RegModel.1</span>, <span class="va">RegModel.2</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-compare-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>모델 세개를 선택해보자.</p>
+<div class="figure">
+<img src="fig/model-compare-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">compareCoefs</span><span class="op">(</span><span class="va">LinearModel.3</span>, <span class="va">LinearModel.4</span>, <span class="va">LinearModel.5</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-compare-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>모델의 계수를 비교하는 과정에서, 설명변수가 반응변수에 영향을 미치는가에 대한 통계적인 근거를 찾게된다. zvals, pvals, se 등의 인자에 대한 사용을 통하여 보다 정교한 비교 결과를 만들 수 있다.</p>
+<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">compareCoefs</span><span class="op">(</span><span class="va">RegModel.1</span>, <span class="va">RegModel.2</span>, zvals<span class="op">=</span><span class="cn">TRUE</span>, pvals<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-compare-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+<div id="관찰-통계를-데이터에-추가하기-add-observation-statistics-to-data" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> 관찰 통계를 데이터에 추가하기…/ Add observation statistics to data…<a class="anchor" aria-label="anchor" href="#%EA%B4%80%EC%B0%B0-%ED%86%B5%EA%B3%84%EB%A5%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-add-observation-statistics-to-data"><i class="fas fa-link"></i></a>
+</h2>
+<div class="figure">
+<img src="fig/model-add-obs-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>데이터셋을 활성화시킨 다음, 그 데이터셋으로 모델을 만들었다고 생각하자. 예를 들어, carData 패키지의 Prestige 데이터셋으로 선형 모델을 만들었고, 그 모델을 LinearModel.1이라고 하자.</p>
+<p>그럼, R Commander의 화면 메뉴 기능에서 ‘모델 &gt; 관찰 통계를 데이터에 추가하기…’ 기능이 활성화된다. 해당 메뉴 기능을 선택하면 아래와 같은 선택 창이 등장한다. 이 통계치들은 lm() 함수를 이용하여 모델을 생성하는 과정에서 함께 연산된 값들이며, 이 값들을 Prestige 데이터셋에 추가할 것인가를 질문받게 된다.</p>
+<div class="figure">
+<img src="fig/model-add-obs-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>R Commander 화면에서 를 선택하면 관찰 통계치가 추가되어 있음을 아래와 같이 알 수 있다:</p>
+<div class="figure">
+<img src="fig/model-add-obs-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span>         <span class="co"># <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span> <span class="co"># 紐⑤뜽 留뚮뱺<ed>썑 <ec>슂<ec>빟<ec>젙蹂<b4> 蹂닿린</b4></ec></ec></ec></ed></span>NA<span class="va">Prestige</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">within</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="op">{</span>
+  <span class="va">fitted.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
+  <span class="va">residuals.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
+  <span class="va">rstudent.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">rstudent</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
+  <span class="va">hatvalues.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hatvalues</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
+  <span class="va">cooks.distance.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">cooks.distance</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
+  <span class="va">obsNumber</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span> 
+<span class="op">}</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="akaike-information-criterio.." class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Akaike Information Criterio..<a class="anchor" aria-label="anchor" href="#akaike-information-criterio.."><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="bayesian-information-criter.." class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> Bayesian Information Criter..<a class="anchor" aria-label="anchor" href="#bayesian-information-criter.."><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="stepwise-model-selection" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Stepwise model selection…<a class="anchor" aria-label="anchor" href="#stepwise-model-selection"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="subset-model-selection.." class="section level2" number="9.8">
+<h2>
+<span class="header-section-number">9.8</span> Subset model selection..<a class="anchor" aria-label="anchor" href="#subset-model-selection.."><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="confidence-intervals" class="section level2" number="9.9">
+<h2>
+<span class="header-section-number">9.9</span> Confidence intervals…<a class="anchor" aria-label="anchor" href="#confidence-intervals"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="bootstrap-confidence-interv.." class="section level2" number="9.10">
+<h2>
+<span class="header-section-number">9.10</span> Bootstrap confidence interv..<a class="anchor" aria-label="anchor" href="#bootstrap-confidence-interv.."><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="delta-method-confidence-int.." class="section level2" number="9.11">
+<h2>
+<span class="header-section-number">9.11</span> Delta method confidence int..<a class="anchor" aria-label="anchor" href="#delta-method-confidence-int.."><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="가설-검정-hypothesis-tests" class="section level2" number="9.12">
+<h2>
+<span class="header-section-number">9.12</span> 가설 검정 / Hypothesis tests<a class="anchor" aria-label="anchor" href="#%EA%B0%80%EC%84%A4-%EA%B2%80%EC%A0%95-hypothesis-tests"><i class="fas fa-link"></i></a>
+</h2>
+<div id="분산분석표-anova-table" class="section level3" number="9.12.1">
+<h3>
+<span class="header-section-number">9.12.1</span> 분산분석표…/ ANOVA table…<a class="anchor" aria-label="anchor" href="#%EB%B6%84%EC%82%B0%EB%B6%84%EC%84%9D%ED%91%9C-anova-table"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/model-testing-anova-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p><a href="https://rcmdr.tistory.com/131">Statistics &gt; Fit models &gt; Linear model… (통계 &gt; 적합성 모델 &gt; 선형 모델…)</a> 기능을 통하여 LinearModel.1라는 모델을 만들었다고 하자. 위의 화면 상단에 &lt;모델: LinearModel.1&gt;이라고 보일 것이다.</p>
+<p>Models &gt; Hypothesis tests &gt; ANOVA table… (모델 &gt; 가설 검정 &gt; 분산분산표…) 기능은 앞선 모델 만들기 작업 위에서 후속적으로 가능함을 명심하자.</p>
+<div class="figure">
+<img src="fig/model-testing-anova-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">Anova</span><span class="op">(</span><span class="va">LinearModel.1</span>, type<span class="op">=</span><span class="st">"II"</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-testing-anova-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+</div>
+</div>
+<div id="numerical-diagnostics" class="section level2" number="9.13">
+<h2>
+<span class="header-section-number">9.13</span> Numerical diagnostics<a class="anchor" aria-label="anchor" href="#numerical-diagnostics"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="그래프-graphs" class="section level2" number="9.14">
+<h2>
+<span class="header-section-number">9.14</span> 그래프 / Graphs<a class="anchor" aria-label="anchor" href="#%EA%B7%B8%EB%9E%98%ED%94%84-graphs"><i class="fas fa-link"></i></a>
+</h2>
+<div id="효과-그림-effect-plots" class="section level3" number="9.14.1">
+<h3>
+<span class="header-section-number">9.14.1</span> 효과 그림…/ Effect plots…<a class="anchor" aria-label="anchor" href="#%ED%9A%A8%EA%B3%BC-%EA%B7%B8%EB%A6%BC-effect-plots"><i class="fas fa-link"></i></a>
+</h3>
+<div class="figure">
+<img src="fig/model-graph-effect-01.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>‘모델 &gt; 그래프 &gt; 효과 그림…’ 기능은 미리 모델이 만들어져야 이용할 수 있다. 만들어진 모델은 아래와 같이 R Commander 상단에서 확인할 수 있다. carData 패키지의 Cowles 데이터셋으로 만든 GLM.1 모델을 활용하는 것이다.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>&lt;모델 효과 그림(들)&gt; 창 중간에 있는 &lt;예측변수 (하나 이상 선택)&gt; 기능에서 sex, neuroticism, extraversion 세 변수를 모두 선택해보자.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu">allEffects</span><span class="op">(</span><span class="va">GLM.1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="figure">
+<img src="fig/model-graph-effect-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>carData 패키지의 Prestige 데이터셋을 이용하여 연습해보자. 아래와 같이 prestige (직업의 사회적 권위)에 대한 education (교육연수), income (연수입), women (여성 참여율)의 영향력을 type (직업유형)별로 살펴보는 모델을 만들었다고 가정하자.</p>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span>
+<span class="va">LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="va">income</span> <span class="op">+</span> <span class="va">women</span> <span class="op">+</span> <span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span></code></pre></div>
+<p>아래와 같이 LinearModel.1의 요약 정보가 출력될 것이다.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>이러한 LinearModel.1의 효과 그림을 시각화 할 수 있다. &lt;모델 효과 그림(들)&gt; 창의 &lt;예측변수(하나 이상 선택)&gt; 기능에서 네개의 변수를 모두 선택해보자. 그리고 예(OK) 버튼을 누른다.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-06.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fu">allEffects</span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<p>아래와 같이 그래픽 장치 창에 선택된 변수 네개의 효과 그림이 등장할 것이다.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-07.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>한편,  기능을 선택해보자.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-08.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+<p>그래픽 장치 창에 잔차들이 플롯으로 표시된다. 표시된 잔차의 분포를 보면서 추가로로 통찰력을 키울 수 있다.</p>
+<div class="figure">
+<img src="fig/model-graph-effect-09.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
+</div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html"><span class="header-section-number">8</span> 그래프 / Graph</a></div>
+<div class="next"><a href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%EB%AA%A8%ED%98%95-models"><span class="header-section-number">9</span> 모형 / models</a></li>
+<li><a class="nav-link" href="#%ED%99%9C%EC%84%B1-%EB%AA%A8%EB%8D%B8-%EC%84%A0%ED%83%9D%ED%95%98%EA%B8%B0-select-active-model"><span class="header-section-number">9.1</span> 활성 모델 선택하기…/ Select active model…</a></li>
+<li><a class="nav-link" href="#%EB%AA%A8%EB%8D%B8-%EC%9A%94%EC%95%BD%ED%95%98%EA%B8%B0-summarize-model"><span class="header-section-number">9.2</span> 모델 요약하기 / Summarize model</a></li>
+<li><a class="nav-link" href="#%EB%AA%A8%EB%8D%B8-%EA%B3%84%EC%88%98-%EB%B9%84%EA%B5%90%ED%95%98%EA%B8%B0-compare-model-coefficients"><span class="header-section-number">9.3</span> 모델 계수 비교하기…/ Compare model coefficients…</a></li>
+<li><a class="nav-link" href="#%EA%B4%80%EC%B0%B0-%ED%86%B5%EA%B3%84%EB%A5%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%97%90-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0-add-observation-statistics-to-data"><span class="header-section-number">9.4</span> 관찰 통계를 데이터에 추가하기…/ Add observation statistics to data…</a></li>
+<li><a class="nav-link" href="#akaike-information-criterio.."><span class="header-section-number">9.5</span> Akaike Information Criterio..</a></li>
+<li><a class="nav-link" href="#bayesian-information-criter.."><span class="header-section-number">9.6</span> Bayesian Information Criter..</a></li>
+<li><a class="nav-link" href="#stepwise-model-selection"><span class="header-section-number">9.7</span> Stepwise model selection…</a></li>
+<li><a class="nav-link" href="#subset-model-selection.."><span class="header-section-number">9.8</span> Subset model selection..</a></li>
+<li><a class="nav-link" href="#confidence-intervals"><span class="header-section-number">9.9</span> Confidence intervals…</a></li>
+<li><a class="nav-link" href="#bootstrap-confidence-interv.."><span class="header-section-number">9.10</span> Bootstrap confidence interv..</a></li>
+<li><a class="nav-link" href="#delta-method-confidence-int.."><span class="header-section-number">9.11</span> Delta method confidence int..</a></li>
+<li>
+<a class="nav-link" href="#%EA%B0%80%EC%84%A4-%EA%B2%80%EC%A0%95-hypothesis-tests"><span class="header-section-number">9.12</span> 가설 검정 / Hypothesis tests</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%EB%B6%84%EC%82%B0%EB%B6%84%EC%84%9D%ED%91%9C-anova-table"><span class="header-section-number">9.12.1</span> 분산분석표…/ ANOVA table…</a></li></ul>
+</li>
+<li><a class="nav-link" href="#numerical-diagnostics"><span class="header-section-number">9.13</span> Numerical diagnostics</a></li>
+<li>
+<a class="nav-link" href="#%EA%B7%B8%EB%9E%98%ED%94%84-graphs"><span class="header-section-number">9.14</span> 그래프 / Graphs</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%ED%9A%A8%EA%B3%BC-%EA%B7%B8%EB%A6%BC-effect-plots"><span class="header-section-number">9.14.1</span> 효과 그림…/ Effect plots…</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
