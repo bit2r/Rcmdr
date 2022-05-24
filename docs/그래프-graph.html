@@ -7,17 +7,48 @@
 <title>8 . 그래프 / Graph | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
 <meta name="description" content="8.1 색 팔레트…/ Color palette…  Linux 사례 (CentOS 7.x) &lt;색 팔레트…&gt; 기능을 선택하면 8개의 주요 색깔이 등장하고 그 색의 16진수(hexadecimal)값과 이름이 표시된다. Linux 사례 (CentOS 7.x) 다섯째 색인 cyan, 일곱째 색인 yellow를 각각 gold, orange로 바꿔보자....">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="8 . 그래프 / Graph | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
 <meta property="og:description" content="8.1 색 팔레트…/ Color palette…  Linux 사례 (CentOS 7.x) &lt;색 팔레트…&gt; 기능을 선택하면 8개의 주요 색깔이 등장하고 그 색의 16진수(hexadecimal)값과 이름이 표시된다. Linux 사례 (CentOS 7.x) 다섯째 색인 cyan, 일곱째 색인 yellow를 각각 gold, orange로 바꿔보자....">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8 . 그래프 / Graph | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta name="twitter:description" content="8.1 색 팔레트…/ Color palette…  Linux 사례 (CentOS 7.x) &lt;색 팔레트…&gt; 기능을 선택하면 8개의 주요 색깔이 등장하고 그 색의 16진수(hexadecimal)값과 이름이 표시된다. Linux 사례 (CentOS 7.x) 다섯째 색인 cyan, 일곱째 색인 yellow를 각각 gold, orange로 바꿔보자....">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-229551680-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-229551680-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,7 +81,6 @@
 <li><a class="" href="%EB%AA%A8%ED%98%95-models.html"><span class="header-section-number">9</span> 모형 / models</a></li>
 <li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></li>
 <li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">11</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">12</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -110,13 +140,15 @@
 <div class="figure">
 <img src="fig/graph-index-plot-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<p>아래 출력창을 살펴보자. indexplot() 함수의 코드 사용법을 먼저 살펴본다. 앞서 입력한 ‘교육연수,’ ’education index plot’이 인자 안에 들어있는 알 수 있다.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">indexplot</span>(Prestige[,<span class="st">'education'</span>, <span class="at">drop=</span><span class="cn">FALSE</span>], <span class="at">type=</span><span class="st">'h'</span>, <span class="at">id.method=</span><span class="st">'y'</span>, <span class="at">id.n=</span><span class="dv">2</span>, </span>
-<span id="cb85-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="at">ylab=</span><span class="st">"교육연수"</span>, <span class="at">main=</span><span class="st">"education index plot"</span>)</span></code></pre></div>
+<p>아래 출력창을 살펴보자. indexplot() 함수의 코드 사용법을 먼저 살펴본다. 앞서 입력한 ‘교육연수’, ’education index plot’이 인자 안에 들어있는 알 수 있다.</p>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">indexplot</span><span class="op">(</span><span class="va">Prestige</span><span class="op">[</span>,<span class="st">'education'</span>, drop<span class="op">=</span><span class="cn">FALSE</span><span class="op">]</span>, type<span class="op">=</span><span class="st">'h'</span>, id.method<span class="op">=</span><span class="st">'y'</span>, id.n<span class="op">=</span><span class="fl">2</span>, 
+ylab<span class="op">=</span><span class="st">"교육연수"</span>, main<span class="op">=</span><span class="st">"education index plot"</span><span class="op">)</span></code></pre></div>
 <p>education 변수의 사례 값 중에서 university.teachers는 15.97, physicians는 15.96라는 두개의 최고 값을 갖는다. 출력창에는 university.teachers, physicians 라는 순서와 함께 사례번호인 21, 24가 출력된다.</p>
 <p>한편 그 밑에 있는 명령문은 출력된 그래픽창의 그림을 저장하는 내용을 담고 있다.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.print</span>(png, <span class="at">filename=</span><span class="st">"/home/jhshin/사진/Rcmdr/Graphs/indexplot/RGraph_indexplot1.png"</span>, </span>
-<span id="cb86-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="at">width=</span><span class="dv">13</span>, <span class="at">height=</span><span class="dv">8</span>, <span class="at">pointsize=</span><span class="dv">12</span>, <span class="at">units=</span><span class="st">"in"</span>, <span class="at">res=</span><span class="dv">300</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/grDevices/dev2.html">dev.print</a></span><span class="op">(</span><span class="va">png</span>, filename<span class="op">=</span><span class="st">"/home/jhshin/사진/Rcmdr/Graphs/indexplot/RGraph_indexplot1.png"</span>, 
+width<span class="op">=</span><span class="fl">13</span>, height<span class="op">=</span><span class="fl">8</span>, pointsize<span class="op">=</span><span class="fl">12</span>, units<span class="op">=</span><span class="st">"in"</span>, res<span class="op">=</span><span class="fl">300</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-index-plot-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -143,8 +175,9 @@
 <div class="figure">
 <img src="fig/graph-histogram-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">Hist</span>(income, <span class="at">scale=</span><span class="st">"frequency"</span>, <span class="at">breaks=</span><span class="st">"Sturges"</span>, <span class="at">col=</span><span class="st">"darkgray"</span>, </span>
-<span id="cb87-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">ylab=</span><span class="st">"수입(연봉)"</span>, <span class="at">main=</span><span class="st">"1971년 캐나다 직업 연봉"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">Hist</span><span class="op">(</span><span class="va">income</span>, scale<span class="op">=</span><span class="st">"frequency"</span>, breaks<span class="op">=</span><span class="st">"Sturges"</span>, col<span class="op">=</span><span class="st">"darkgray"</span>, 
+    ylab<span class="op">=</span><span class="st">"수입(연봉)"</span>, main<span class="op">=</span><span class="st">"1971년 캐나다 직업 연봉"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>그래픽장치 창에 다음과 같은 히스토그램이 등장한다.</p>
 <div class="figure">
 <img src="fig/graph-histogram-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
@@ -178,7 +211,8 @@
 </div>
 <p>carData 패키지의 Cowles 데이터셋을 활용해서 연습해보자.</p>
 <div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Cowles</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span> <span class="co"># Cowles <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Cowles</span><span class="op">)</span>                 <span class="co"># Cowles <eb>뜲<ec>씠<ed>꽣<ec>뀑<ec>쓽 <ec>슂<ec>빟<ec>젙蹂<b4> 蹂닿린 (蹂<ec>닔<ec>씠由&lt;84&gt;, <ec>궗濡<ec>슂<ec>빟)</ec></ec></ec></ec></ec></b4></ec></ec></ec></ec></ec></ed></ec></eb></span>NA</code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Cowles</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span> <span class="co"># Cowles 데이터셋 불러오기</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Cowles</span><span class="op">)</span>                 <span class="co"># Cowles 데이터셋의 요약정보 보기 (변수이름, 사례요약)</span></code></pre></div>
 <p>외향성을 의미하는 이산형 수치 변수인 extraversion을 선택한다.</p>
 <div class="figure">
 <img src="fig/graph-discrete-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
@@ -191,12 +225,13 @@
 <div class="figure">
 <img src="fig/graph-discrete-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<p>아래와 같이 그래픽 창에 ‘이산형 수치 변수’ extraversion의 백분율 분포가 자원봉사 지원 여부인 volunteer 변수의 요인형 수준인 ‘no,’ ‘yes’ 별로 그래프화된다.</p>
+<p>아래와 같이 그래픽 창에 ‘이산형 수치 변수’ extraversion의 백분율 분포가 자원봉사 지원 여부인 volunteer 변수의 요인형 수준인 ‘no’, ‘yes’ 별로 그래프화된다.</p>
 <div class="figure">
 <img src="fig/graph-discrete-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Cowles, <span class="fu">discretePlot</span>(extraversion, <span class="at">by=</span>volunteer, <span class="at">scale=</span><span class="st">"percent"</span>, <span class="at">xlab=</span><span class="st">"외향성 (extraversion)"</span>,</span>
-<span id="cb90-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb90-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">ylab=</span><span class="st">"비율 (%)"</span>, <span class="at">main=</span><span class="st">"자원봉사 지원여부 그룹에 따른 외향성 분포"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Cowles</span>, <span class="fu">discretePlot</span><span class="op">(</span><span class="va">extraversion</span>, by<span class="op">=</span><span class="va">volunteer</span>, scale<span class="op">=</span><span class="st">"percent"</span>, xlab<span class="op">=</span><span class="st">"외향성 (extraversion)"</span>,
+   ylab<span class="op">=</span><span class="st">"비율 (%)"</span>, main<span class="op">=</span><span class="st">"자원봉사 지원여부 그룹에 따른 외향성 분포"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <hr>
 <p></p>
 <ul>
@@ -218,12 +253,13 @@
 <img src="fig/graph-density-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <p>밀도 추정 그래프를 시각화하는 경우, 그래프의 시작점과 끝점에 대한 사전정보를 수치적 정보 요약 등을 활용하여 미리 알고서 지정해주면 그래프가 보다 정교해진다. 위의 그래프를 보라. 수입(연봉)을 표시하는 촘촘한 사례들의 영역 바깥에 그래프의 왼쪽 긑과 오른쪽 끝이 표시된 것을 보게된다. 변화를 줘보자.</p>
-<p>numSummary(Prestige<span class="math display">\[,"income", drop=FALSE\]</span>, statistics=c(“mean,” “sd,” “IQR,” “quantiles”), quantiles=c(0,.25,.5,.75,1)) numSummary() 함수를 활용하여 최소값, 최대값 등을 찾아보자. 그 사례 값을 아래의 입력창에 넣는다.</p>
+<p>numSummary(Prestige<span class="math display">\[,"income", drop=FALSE\]</span>, statistics=c(“mean”, “sd”, “IQR”, “quantiles”), quantiles=c(0,.25,.5,.75,1)) numSummary() 함수를 활용하여 최소값, 최대값 등을 찾아보자. 그 사례 값을 아래의 입력창에 넣는다.</p>
 <div class="figure">
 <img src="fig/graph-density-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <p>그래프의 시작점에 최소값을, 끝점에 최대값을 넣고 그래프를 만들면, 수입(연봉)의 분포가 보다 분명하게 보일 것이다.</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">densityPlot</span>( <span class="sc">~</span> income, <span class="at">data=</span>Prestige, <span class="at">bw=</span>bw.SJ, <span class="at">adjust=</span><span class="dv">1</span>, <span class="at">kernel=</span>dnorm, <span class="at">method=</span><span class="st">"adaptive"</span>, <span class="at">from=</span><span class="dv">611</span>, <span class="at">to=</span><span class="dv">25879</span>, <span class="at">xlab=</span><span class="st">"수입(연봉)"</span>, <span class="at">ylab=</span><span class="st">"밀도(Density)"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">densityPlot</span><span class="op">(</span> <span class="op">~</span> <span class="va">income</span>, data<span class="op">=</span><span class="va">Prestige</span>, bw<span class="op">=</span><span class="va">bw.SJ</span>, adjust<span class="op">=</span><span class="fl">1</span>, kernel<span class="op">=</span><span class="va">dnorm</span>, method<span class="op">=</span><span class="st">"adaptive"</span>, from<span class="op">=</span><span class="fl">611</span>, to<span class="op">=</span><span class="fl">25879</span>, xlab<span class="op">=</span><span class="st">"수입(연봉)"</span>, ylab<span class="op">=</span><span class="st">"밀도(Density)"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-density-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -244,7 +280,8 @@
 <img src="fig/graph-density-09.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <p>아래 코드에서 ’main’인자를 살펴보라. 메뉴창에 등장하는 기능을 활용하면서 적용할 수 있는 범위에 DensityPlot 함수에는 제목 입력이 없다. 아쉽기도 한 부분이다. 이 경우는 입력창에서 main=“제목 이름”을 추가하여 넣고 실행하기 버튼을 누르면 된다.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">densityPlot</span>(income<span class="sc">~</span>type, <span class="at">data=</span>Prestige, <span class="at">bw=</span>bw.SJ, <span class="at">adjust=</span><span class="dv">1</span>, <span class="at">kernel=</span>dnorm, <span class="at">method=</span><span class="st">"adaptive"</span>, <span class="at">from=</span><span class="dv">611</span>, <span class="at">to=</span><span class="dv">25879</span>, <span class="at">xlab=</span><span class="st">"수입(연봉)"</span>, <span class="at">ylab=</span><span class="st">"밀도(Density)"</span>, <span class="at">main=</span><span class="st">"1971년 캐나다 직업 유형별 수입에 관한 밀도그래프"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">densityPlot</span><span class="op">(</span><span class="va">income</span><span class="op">~</span><span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span>, bw<span class="op">=</span><span class="va">bw.SJ</span>, adjust<span class="op">=</span><span class="fl">1</span>, kernel<span class="op">=</span><span class="va">dnorm</span>, method<span class="op">=</span><span class="st">"adaptive"</span>, from<span class="op">=</span><span class="fl">611</span>, to<span class="op">=</span><span class="fl">25879</span>, xlab<span class="op">=</span><span class="st">"수입(연봉)"</span>, ylab<span class="op">=</span><span class="st">"밀도(Density)"</span>, main<span class="op">=</span><span class="st">"1971년 캐나다 직업 유형별 수입에 관한 밀도그래프"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-density-10.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -293,8 +330,9 @@
 <img src="fig/graph-boxplot-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <p>아래와 같은 명령문이 사용된다:</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Boxplot</span>(income<span class="sc">~</span>type, <span class="at">data=</span>Prestige, <span class="at">id=</span><span class="fu">list</span>(<span class="at">method=</span><span class="st">"y"</span>), <span class="at">xlab=</span><span class="st">"직업유형(type)"</span>, </span>
-<span id="cb93-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab=</span><span class="st">"수입(연봉, income)"</span>, <span class="at">main=</span><span class="st">"1971년 캐나다 직업유형별 수입"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">Boxplot</span><span class="op">(</span><span class="va">income</span><span class="op">~</span><span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span>, id<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"y"</span><span class="op">)</span>, xlab<span class="op">=</span><span class="st">"직업유형(type)"</span>, 
+  ylab<span class="op">=</span><span class="st">"수입(연봉, income)"</span>, main<span class="op">=</span><span class="st">"1971년 캐나다 직업유형별 수입"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="분위수-비교-그림-quantile-comparison-plot" class="section level2" number="8.8">
 <h2>
@@ -316,7 +354,7 @@
 <div class="figure">
 <img src="fig/graph-qqplot-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<p>with(Prestige, qqPlot(income, dist=“norm,” id=list(method=“y,” n=2, labels=rownames(Prestige)), ylab=“income (수입),” main=“income 변수의 분위수-비교 그림”))</p>
+<p>with(Prestige, qqPlot(income, dist=“norm”, id=list(method=“y”, n=2, labels=rownames(Prestige)), ylab=“income (수입)”, main=“income 변수의 분위수-비교 그림”))</p>
 <div class="figure">
 <img src="fig/graph-qqplot-05.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -364,19 +402,21 @@
 <div class="figure">
 <img src="fig/graph-scatterplot-03.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplot</span>(income<span class="sc">~</span>education, <span class="at">regLine=</span><span class="cn">TRUE</span>, <span class="at">smooth=</span><span class="fu">list</span>(<span class="at">span=</span><span class="fl">0.5</span>, </span>
-<span id="cb94-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb94-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">spread=</span><span class="cn">FALSE</span>), <span class="at">boxplots=</span><span class="cn">FALSE</span>, <span class="at">xlab=</span><span class="st">"education (교육연수)"</span>, </span>
-<span id="cb94-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab=</span><span class="st">"income (수입, 연소득)"</span>, <span class="at">main=</span><span class="st">"교육연수와 연소득의 관계"</span>, <span class="at">cex.axis=</span><span class="fl">1.5</span>, <span class="at">cex.lab=</span><span class="fl">1.5</span>, </span>
-<span id="cb94-4"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb94-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data=</span>Prestige)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">scatterplot</span><span class="op">(</span><span class="va">income</span><span class="op">~</span><span class="va">education</span>, regLine<span class="op">=</span><span class="cn">TRUE</span>, smooth<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>span<span class="op">=</span><span class="fl">0.5</span>, 
+  spread<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>, boxplots<span class="op">=</span><span class="cn">FALSE</span>, xlab<span class="op">=</span><span class="st">"education (교육연수)"</span>, 
+  ylab<span class="op">=</span><span class="st">"income (수입, 연소득)"</span>, main<span class="op">=</span><span class="st">"교육연수와 연소득의 관계"</span>, cex.axis<span class="op">=</span><span class="fl">1.5</span>, cex.lab<span class="op">=</span><span class="fl">1.5</span>, 
+  data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
 <p>새로운 그래픽장치 창에 산점도가 출력된다. 를 시각적으로 살펴보고자 한 목적으로 점들의 분포와 추가된 최소제곱선, 평활선 등을 점검한다. 교육연수와 연소득의 관계의 방향, 크기 및 경향성 등에 대한 통찰력을 키울 수 있다.</p>
 <div class="figure">
 <img src="fig/graph-scatterplot-04.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
 <p>한편, 산점도에 요인형 변수의 수준별로 나누어 시각화를 할 수 있다. Prestige 데이터셋에는 type 이라는 요인형 변수가 있는데, 직업유형에 따른 를 보다 미시적으로 살펴볼 수 있다. 그리고 x-축, y-축 이름 옆에 을 추가하여 각 변수들의 수치적 특징을 추가할 수 있다.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplot</span>(income<span class="sc">~</span>education <span class="sc">|</span> type, <span class="at">regLine=</span><span class="cn">TRUE</span>, <span class="at">smooth=</span><span class="fu">list</span>(<span class="at">span=</span><span class="fl">0.5</span>, </span>
-<span id="cb95-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb95-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">spread=</span><span class="cn">FALSE</span>), <span class="at">boxplots=</span><span class="st">'xy'</span>, <span class="at">xlab=</span><span class="st">"education (교육연수)"</span>, <span class="at">ylab=</span><span class="st">"income (수입, </span></span>
-<span id="cb95-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="st">  연소득)"</span>, <span class="at">main=</span><span class="st">"교육연수와 연소득의 관계"</span>, <span class="at">cex.axis=</span><span class="fl">1.5</span>, <span class="at">cex.lab=</span><span class="fl">1.5</span>, <span class="at">by.groups=</span><span class="cn">TRUE</span>, </span>
-<span id="cb95-4"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data=</span>Prestige)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">scatterplot</span><span class="op">(</span><span class="va">income</span><span class="op">~</span><span class="va">education</span> <span class="op">|</span> <span class="va">type</span>, regLine<span class="op">=</span><span class="cn">TRUE</span>, smooth<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>span<span class="op">=</span><span class="fl">0.5</span>, 
+  spread<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>, boxplots<span class="op">=</span><span class="st">'xy'</span>, xlab<span class="op">=</span><span class="st">"education (교육연수)"</span>, ylab<span class="op">=</span><span class="st">"income (수입, 
+  연소득)"</span>, main<span class="op">=</span><span class="st">"교육연수와 연소득의 관계"</span>, cex.axis<span class="op">=</span><span class="fl">1.5</span>, cex.lab<span class="op">=</span><span class="fl">1.5</span>, by.groups<span class="op">=</span><span class="cn">TRUE</span>, 
+  data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-scatterplot-05.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
@@ -397,9 +437,10 @@
 <div class="figure">
 <img src="fig/graph-scatterplot-matrix-03.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scatterplotMatrix</span>(<span class="sc">~</span>education<span class="sc">+</span>income<span class="sc">+</span>prestige<span class="sc">+</span>women, <span class="at">regLine=</span><span class="cn">TRUE</span>, </span>
-<span id="cb96-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb96-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">smooth=</span><span class="fu">list</span>(<span class="at">span=</span><span class="fl">0.5</span>, <span class="at">spread=</span><span class="cn">FALSE</span>), <span class="at">diagonal=</span><span class="fu">list</span>(<span class="at">method=</span><span class="st">"density"</span>), </span>
-<span id="cb96-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb96-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data=</span>Prestige, <span class="at">main=</span><span class="st">"Prestige 데이터셋 주요변수들의 산점도 행렬"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">scatterplotMatrix</span><span class="op">(</span><span class="op">~</span><span class="va">education</span><span class="op">+</span><span class="va">income</span><span class="op">+</span><span class="va">prestige</span><span class="op">+</span><span class="va">women</span>, regLine<span class="op">=</span><span class="cn">TRUE</span>, 
+  smooth<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>span<span class="op">=</span><span class="fl">0.5</span>, spread<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span>, diagonal<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"density"</span><span class="op">)</span>, 
+  data<span class="op">=</span><span class="va">Prestige</span>, main<span class="op">=</span><span class="st">"Prestige 데이터셋 주요변수들의 산점도 행렬"</span><span class="op">)</span></code></pre></div>
 <p>아래와 같은 그래픽장치 창에 산점도 행렬이 등장한다. education, income, prestige, women 이라는 네개의 변수 각각의 밀도함수가 변수 이름과 함께 작성되어 있으며, 행렬 매 칸마다 두개의 변수 사이의 산점도가 제공된다. 행렬 칸 바깥에 있는 숫자들은 수치형 변수들의 사례 값 범위를 요약해서 보여준다.</p>
 <div class="figure">
 <img src="fig/graph-scatterplot-matrix-04.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
@@ -465,10 +506,11 @@
 <div class="figure">
 <img src="fig/graph-xy-plot-03.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(prestige <span class="sc">~</span> income, <span class="at">groups=</span>type, <span class="at">type=</span><span class="st">"p"</span>, <span class="at">pch=</span><span class="dv">16</span>, </span>
-<span id="cb97-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">auto.key=</span><span class="fu">list</span>(<span class="at">border=</span><span class="cn">TRUE</span>), <span class="at">par.settings=</span><span class="fu">simpleTheme</span>(<span class="at">pch=</span><span class="dv">16</span>), </span>
-<span id="cb97-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">scales=</span><span class="fu">list</span>(<span class="at">x=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">'same'</span>), <span class="at">y=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">'same'</span>)), <span class="at">data=</span>Prestige, </span>
-<span id="cb97-4"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb97-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab=</span><span class="st">"income (연소득)"</span>, <span class="at">ylab=</span><span class="st">"prestige (직업의권위)"</span>, <span class="at">main=</span><span class="st">"연소득에 따른 직업의 사회적 권위인식"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">xyplot</span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">income</span>, groups<span class="op">=</span><span class="va">type</span>, type<span class="op">=</span><span class="st">"p"</span>, pch<span class="op">=</span><span class="fl">16</span>, 
+  auto.key<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>border<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>, par.settings<span class="op">=</span><span class="fu">simpleTheme</span><span class="op">(</span>pch<span class="op">=</span><span class="fl">16</span><span class="op">)</span>, 
+  scales<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>relation<span class="op">=</span><span class="st">'same'</span><span class="op">)</span>, y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>relation<span class="op">=</span><span class="st">'same'</span><span class="op">)</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Prestige</span>, 
+  xlab<span class="op">=</span><span class="st">"income (연소득)"</span>, ylab<span class="op">=</span><span class="st">"prestige (직업의권위)"</span>, main<span class="op">=</span><span class="st">"연소득에 따른 직업의 사회적 권위인식"</span><span class="op">)</span></code></pre></div>
 <p>그래픽장치 창에 아래와 같은 그래프가 출력된다. 직업유형을 뜻하는 type 변수의 수준인 bc, prof, wc 수준의 범례가 보인다. 그리고 그 색깔별로 점들이 찍혀 있어, 추가적인 이해를 제공한다.</p>
 <div class="figure">
 <img src="fig/graph-xy-plot-04.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
@@ -484,10 +526,11 @@
 <div class="figure">
 <img src="fig/graph-xy-plot-07.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(prestige <span class="sc">~</span> income <span class="sc">|</span> type, <span class="at">type=</span><span class="st">"p"</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">auto.key=</span><span class="fu">list</span>(<span class="at">border=</span><span class="cn">TRUE</span>),</span>
-<span id="cb98-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb98-2" aria-hidden="true" tabindex="-1"></a>   <span class="at">par.settings=</span><span class="fu">simpleTheme</span>(<span class="at">pch=</span><span class="dv">16</span>), <span class="at">scales=</span><span class="fu">list</span>(<span class="at">x=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">'same'</span>), </span>
-<span id="cb98-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb98-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y=</span><span class="fu">list</span>(<span class="at">relation=</span><span class="st">'same'</span>)), <span class="at">data=</span>Prestige, <span class="at">xlab=</span><span class="st">"income (연소득)"</span>, <span class="at">ylab=</span><span class="st">"prestige </span></span>
-<span id="cb98-4"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="st">  (직업의권위)"</span>, <span class="at">main=</span><span class="st">"연소득에 따른 직업의 사회적 권위의식"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">xyplot</span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">income</span> <span class="op">|</span> <span class="va">type</span>, type<span class="op">=</span><span class="st">"p"</span>, pch<span class="op">=</span><span class="fl">16</span>, auto.key<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>border<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>,
+   par.settings<span class="op">=</span><span class="fu">simpleTheme</span><span class="op">(</span>pch<span class="op">=</span><span class="fl">16</span><span class="op">)</span>, scales<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>x<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>relation<span class="op">=</span><span class="st">'same'</span><span class="op">)</span>, 
+  y<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>relation<span class="op">=</span><span class="st">'same'</span><span class="op">)</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Prestige</span>, xlab<span class="op">=</span><span class="st">"income (연소득)"</span>, ylab<span class="op">=</span><span class="st">"prestige 
+  (직업의권위)"</span>, main<span class="op">=</span><span class="st">"연소득에 따른 직업의 사회적 권위의식"</span><span class="op">)</span></code></pre></div>
 <p>아래에 있는 그래픽장치 창은 위에 있는 그래픽장치 창과 달리 직업유형별(bc, prof, wc)별로 산점도가 각각 제작된다.</p>
 <div class="figure">
 <img src="fig/graph-xy-plot-08.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
@@ -522,23 +565,26 @@
 <div class="figure">
 <img src="fig/graph-means-plot-03.png" alt=""><p class="caption">Linux 사례 (CentOS 7.x)</p>
 </div>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">plotMeans</span>(income, type, <span class="at">error.bars=</span><span class="st">"se"</span>, <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, </span>
-<span id="cb100-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab=</span><span class="st">"income (연소득)"</span>, <span class="at">main=</span><span class="st">"1971년  캐나다 직업유형별 연소득 평균그림"</span>, <span class="at">connect=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">plotMeans</span><span class="op">(</span><span class="va">income</span>, <span class="va">type</span>, error.bars<span class="op">=</span><span class="st">"se"</span>, xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, 
+  ylab<span class="op">=</span><span class="st">"income (연소득)"</span>, main<span class="op">=</span><span class="st">"1971년  캐나다 직업유형별 연소득 평균그림"</span>, connect<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Prestige 데이터셋의 요인형 변수 type에는 세개의 수준이 있으며, bc, prof, wc 등이다. 아래 그래픽장치 창에는 bc, prof, wc 직업 유형에 포함된 직업들의 평균 소득을 알리는 그래프가 출력된다.</p>
 <div class="figure">
 <img src="fig/graph-means-plot-04.png" alt=""><p class="caption">Linux 사례 (CentOS 7.x)</p>
 </div>
 <p>income 변수 대신 prestige 변수를 선택해보자. 해당 직업에 대한 사회적 권위의 크기를 표시하는 prestige 변수의 평균 그림을 직업유형 bc, prof, wc 별로 제작해 보자.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">plotMeans</span>(income, type, <span class="at">error.bars=</span><span class="st">"se"</span>, </span>
-<span id="cb101-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb101-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, <span class="at">ylab=</span><span class="st">"prestige (직업권위)"</span>, </span>
-<span id="cb101-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb101-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">main=</span><span class="st">"1971년  캐나다 직업유형별  직업권위 평균그림"</span>, <span class="at">connect=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">plotMeans</span><span class="op">(</span><span class="va">income</span>, <span class="va">type</span>, error.bars<span class="op">=</span><span class="st">"se"</span>, 
+    xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, ylab<span class="op">=</span><span class="st">"prestige (직업권위)"</span>, 
+    main<span class="op">=</span><span class="st">"1971년  캐나다 직업유형별  직업권위 평균그림"</span>, connect<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-means-plot-05.png" alt=""><p class="caption">Linux 사례 (CentOS 7.x)</p>
 </div>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">plotMeans</span>(prestige, type, <span class="at">error.bars=</span><span class="st">"se"</span>, <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, </span>
-<span id="cb102-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab=</span><span class="st">"prestige (직업권위)"</span>, <span class="at">main=</span><span class="st">"1971년 캐나다 직업유형별 직업권위 평균그림"</span>, <span class="at">connect=</span><span class="cn">TRUE</span>))</span>
-<span id="cb102-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">plotMeans</span>(prestige, type, <span class="at">error.bars=</span><span class="st">"se"</span>, <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, </span>
-<span id="cb102-4"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab=</span><span class="st">"prestige (직업권위)"</span>, <span class="at">main=</span><span class="st">"1971년 캐나다 직업유형별 직업권위 평균그림"</span>, <span class="at">connect=</span><span class="cn">FALSE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">plotMeans</span><span class="op">(</span><span class="va">prestige</span>, <span class="va">type</span>, error.bars<span class="op">=</span><span class="st">"se"</span>, xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, 
+  ylab<span class="op">=</span><span class="st">"prestige (직업권위)"</span>, main<span class="op">=</span><span class="st">"1971년 캐나다 직업유형별 직업권위 평균그림"</span>, connect<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">plotMeans</span><span class="op">(</span><span class="va">prestige</span>, <span class="va">type</span>, error.bars<span class="op">=</span><span class="st">"se"</span>, xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, 
+  ylab<span class="op">=</span><span class="st">"prestige (직업권위)"</span>, main<span class="op">=</span><span class="st">"1971년 캐나다 직업유형별 직업권위 평균그림"</span>, connect<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>명령문의 함수 내부를 살펴보자. 맨 마지막의 ‘connect=TRUE/FALSE’ 가 다를 것이다. 아래 메뉴 창의 맨 아래에서 에 표시를 제거해보자.</p>
 <p><img src="fig/graph-means-plot-06.png" alt="Linux 사례 (CentOS 7.x)"><img src="fig/graph-means-plot-07.png" alt="Linux 사례 (CentOS 7.x)"></p>
 </div>
@@ -557,9 +603,10 @@
 <div class="figure">
 <img src="fig/graph-strip-plot-03.png" alt=""><p class="caption">Linux 사례 (CentOS 7.x)</p>
 </div>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stripchart</span>(income <span class="sc">~</span> type, <span class="at">vertical=</span><span class="cn">TRUE</span>, <span class="at">method=</span><span class="st">"jitter"</span>, </span>
-<span id="cb103-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb103-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, <span class="at">ylab=</span><span class="st">"income (연소득)"</span>, </span>
-<span id="cb103-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb103-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">main=</span><span class="st">"1971년 캐나다 직업유형별 연소득에 관한 조각 도표"</span>, <span class="at">data=</span>Prestige)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/stripchart.html">stripchart</a></span><span class="op">(</span><span class="va">income</span> <span class="op">~</span> <span class="va">type</span>, vertical<span class="op">=</span><span class="cn">TRUE</span>, method<span class="op">=</span><span class="st">"jitter"</span>, 
+    xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, ylab<span class="op">=</span><span class="st">"income (연소득)"</span>, 
+    main<span class="op">=</span><span class="st">"1971년 캐나다 직업유형별 연소득에 관한 조각 도표"</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span></code></pre></div>
 <p>아래 그래픽장치 창에 ’조각 도표(Strip chart)’가 제작된다. 직업유형별로 연소득의 사례들이 크기별로 표시되어 있음을 알 수 있다.</p>
 <div class="figure">
 <img src="fig/graph-strip-plot-04.png" alt=""><p class="caption">Linux 사례 (CentOS 7.x)</p>
@@ -580,9 +627,10 @@
 <div class="figure">
 <img src="fig/graph-barplot-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">Barplot</span>(type, <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, <span class="at">ylab=</span><span class="st">"Percent"</span>, </span>
-<span id="cb104-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">main=</span><span class="st">"1971년 캐나다 직업군에서 직업유형별 막대그래프"</span>, </span>
-<span id="cb104-3"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col=</span><span class="fu">palette</span>()[<span class="dv">2</span>], <span class="at">scale=</span><span class="st">"percent"</span>, <span class="at">label.bars=</span><span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu">Barplot</span><span class="op">(</span><span class="va">type</span>, xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, ylab<span class="op">=</span><span class="st">"Percent"</span>, 
+  main<span class="op">=</span><span class="st">"1971년 캐나다 직업군에서 직업유형별 막대그래프"</span>, 
+  col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palette.html">palette</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span>, scale<span class="op">=</span><span class="st">"percent"</span>, label.bars<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>아래와 같이 그래픽장치 창에 막대 그래프가 출력된다.</p>
 <div class="figure">
 <img src="fig/graph-barplot-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
@@ -599,8 +647,9 @@
 <div class="figure">
 <img src="fig/graph-pie-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(Prestige, <span class="fu">piechart</span>(type, <span class="at">xlab=</span><span class="st">"type (직업유형)"</span>, <span class="at">ylab=</span><span class="st">""</span>, </span>
-<span id="cb105-2"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="at">main=</span><span class="st">"1971년 캐나다 직업군의 유형 비율"</span>, <span class="at">col=</span><span class="fu">palette</span>()[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>], <span class="at">scale=</span><span class="st">"percent"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="fu"><a href="https://rdrr.io/r/graphics/graphics-defunct.html">piechart</a></span><span class="op">(</span><span class="va">type</span>, xlab<span class="op">=</span><span class="st">"type (직업유형)"</span>, ylab<span class="op">=</span><span class="st">""</span>, 
+main<span class="op">=</span><span class="st">"1971년 캐나다 직업군의 유형 비율"</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palette.html">palette</a></span><span class="op">(</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>, scale<span class="op">=</span><span class="st">"percent"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/graph-pie-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -620,7 +669,7 @@
 <div class="figure">
 <img src="fig/graph-3d-scatter-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<p> 창에서 ‘축(axis) 규모 보이기,’ ’표면 그리드 선 보이기’를 선택하고, 에서 ’평활 회귀’를 선택해본다.</p>
+<p> 창에서 ‘축(axis) 규모 보이기’, ’표면 그리드 선 보이기’를 선택하고, 에서 ’평활 회귀’를 선택해본다.</p>
 <div class="figure">
 <img src="fig/graph-3d-scatter-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -658,7 +707,8 @@
 <div class="figure">
 <img src="fig/graph-3d-save-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rgl.snapshot</span>(<span class="st">"/home/jhshin/RGLGraph_추가이름1.png"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">rgl.snapshot</span><span class="op">(</span><span class="st">"/home/jhshin/RGLGraph_추가이름1.png"</span><span class="op">)</span></code></pre></div>
 </div>
 </div>
 <div id="그래프-파일에-저장-save-graph-to-file" class="section level2" number="8.19">
@@ -694,7 +744,8 @@
 <div class="figure">
 <img src="fig/graph-save-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="%EA%B7%B8%EB%9E%98%ED%94%84-graph.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rgl.snapshot</span>(<span class="st">"/home/jhshin/RGLGraph_추가이름2.png"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">rgl.snapshot</span><span class="op">(</span><span class="st">"/home/jhshin/RGLGraph_추가이름2.png"</span><span class="op">)</span></code></pre></div>
 
 </div>
 </div>
@@ -754,7 +805,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-17.</p>
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-05-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

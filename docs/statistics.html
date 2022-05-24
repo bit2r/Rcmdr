@@ -7,17 +7,48 @@
 <title>7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
 <meta name="description" content="7.1 요약 / Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04)  7.1.1 활성 데이터셋 /...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
 <meta property="og:description" content="7.1 요약 / Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04)  7.1.1 활성 데이터셋 /...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7 . 통계 / Statistics | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta name="twitter:description" content="7.1 요약 / Summaries  LInux 사례 (Ubuntu 18.04) 활성 데이터셋이 없는 경우, 통계 분석의 대상이 없기 때문에 하위 기능의 메뉴가 음영 처리되어 있다. 활성 데이터셋이 있는 경우 아래와 같이 음영 처리가 사라지고, 하위 기능을 선택할 수 있게 된다: LInux 사례 (Ubuntu 18.04)  7.1.1 활성 데이터셋 /...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-229551680-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-229551680-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,7 +81,6 @@
 <li><a class="" href="%EB%AA%A8%ED%98%95-models.html"><span class="header-section-number">9</span> 모형 / models</a></li>
 <li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></li>
 <li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">11</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">12</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -323,7 +353,7 @@
 <div class="figure">
 <img src="fig/statistics-means-ttest-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<p>t.test(extra~group, alternative=‘two.sided,’ conf.level=.95, var.equal=FALSE, data=sleep)
+<p>t.test(extra~group, alternative=‘two.sided’, conf.level=.95, var.equal=FALSE, data=sleep)
 alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 다음과 같은 결과를 갖는다.</p>
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span></code></pre></div>
@@ -550,11 +580,13 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
 </div>
 <p>‘통계 &gt; 비모수 검정 &gt; 이-표본 Wilcoxon 검정…’ 기능을 이용하기 위해서 데이터셋을 선택하고, 정비해보자. datasets 패키지에 있는 <a href="https://rcmdr.kr/100">airquality 데이터셋</a>을 선택하고, 그 안에 있는 변수 Month 사례 값들 중에서 5월, 8월에 해당하는 5, 8을 선택한 하위 데이터셋을 만들고, airquality.sub라 이름 붙이자. 그리고, 5, 8을 요인화 시켜서, May, August라고 수준을 만들자.</p>
 <div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">airquality</span>, package<span class="op">=</span><span class="st">"datasets"</span><span class="op">)</span> <span class="co"># airquality <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="va">airquality.sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">airquality</span>, subset<span class="op">=</span><span class="va">Month</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span> 
-                                     <span class="co"># 5<ec>썡, 8<ec>썡留&lt;8c&gt; <ed>룷<ed>븿<ed>븯<eb>뒗 <ed>븯<ec>쐞<ec>뀑 留뚮뱾湲<b0></b0></ec></ec></ed></eb></ed></ed></ed></ec></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">airquality.sub</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">airquality</span>, package<span class="op">=</span><span class="st">"datasets"</span><span class="op">)</span> <span class="co"># airquality 데이터셋 불러오기</span>
+<span class="va">airquality.sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">airquality</span>, subset<span class="op">=</span><span class="va">Month</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">8</span><span class="op">)</span><span class="op">)</span> 
+                                     <span class="co"># 5월, 8월만 포함하는 하위셋 만들기</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">airquality.sub</span><span class="op">)</span>
 <span class="va">airquality.sub</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">within</a></span><span class="op">(</span><span class="va">airquality.sub</span>, <span class="op">{</span>
   <span class="va">Month.f</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Month</span>, labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'May'</span>,<span class="st">'August'</span><span class="op">)</span><span class="op">)</span>
-<span class="op">}</span><span class="op">)</span>                                   <span class="co"># Month.f<eb>씪<eb>뒗 <ec>슂<ec>씤<ed>삎 蹂<ec>닔 留뚮뱾湲<b0></b0></ec></ed></ec></ec></eb></eb></span>NA</code></pre></div>
+<span class="op">}</span><span class="op">)</span>                                   <span class="co"># Month.f라는 요인형 변수 만들기</span></code></pre></div>
 <p>집단 변수인 Month.f는 두개의 수준을 갖고 있고, 이 두개의 수준을 기준으로 Ozone을 비교하는 것이다.</p>
 <div class="figure">
 <img src="fig/statistics-nonparametric-two-sample-02.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
@@ -608,7 +640,8 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
 <div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">first</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1.83</span>,  <span class="fl">0.50</span>,  <span class="fl">1.62</span>,  <span class="fl">2.48</span>, <span class="fl">1.68</span>, <span class="fl">1.88</span>, <span class="fl">1.55</span>, <span class="fl">3.06</span>, <span class="fl">1.30</span><span class="op">)</span>
 <span class="va">second</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.878</span>, <span class="fl">0.647</span>, <span class="fl">0.598</span>, <span class="fl">2.05</span>, <span class="fl">1.06</span>, <span class="fl">1.29</span>, <span class="fl">1.06</span>, <span class="fl">3.14</span>, <span class="fl">1.29</span><span class="op">)</span>
-<span class="va">change</span> <span class="op">&lt;-</span> <span class="va">second</span> <span class="op">-</span> <span class="va">first</span>  <span class="co"># compute new variable 李몄“<ed>븷 寃&lt;83&gt;</ed></span>NA<span class="va">depression</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">first</span>, <span class="va">second</span>, <span class="va">change</span><span class="op">)</span><span class="op">)</span> <span class="co"># <ec>꽭媛쒖쓽 vector瑜<bc> 臾띠뼱 <eb>뜲<ec>씠<ed>꽣<ed>봽<eb>젅<ec>엫<ec>쑝濡&lt;9c&gt; <ec>쟾<ed>솚</ed></ec></ec></ec></eb></ed></ed></ec></eb></bc></ec></span>NA</code></pre></div>
+<span class="va">change</span> <span class="op">&lt;-</span> <span class="va">second</span> <span class="op">-</span> <span class="va">first</span>  <span class="co"># compute new variable 참조할 것</span>
+<span class="va">depression</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">first</span>, <span class="va">second</span>, <span class="va">change</span><span class="op">)</span><span class="op">)</span> <span class="co"># 세개의 vector를 묶어 데이터프레임으로 전환</span></code></pre></div>
 <p><a href="https://rcmdr.kr/54">Compute new variable…</a></p>
 <div class="figure">
 <img src="fig/statistics-nonparametric-paired-02.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
@@ -620,8 +653,9 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
 <div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">depression</span>, <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">second</span> <span class="op">-</span> <span class="va">first</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="co"># median difference</span>
 <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">depression</span>, <span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">second</span>, <span class="va">first</span>, alternative<span class="op">=</span><span class="st">'two.sided'</span>, 
-  paired<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="co"># <ec>뼇痢<a1> 寃<ec>젙</ec></a1></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">depression</span>, <span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">second</span>, <span class="va">first</span>, alternative<span class="op">=</span><span class="st">'less'</span>, paired<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
-                <span class="co"># 攼㹢떒痢愼㸱 寃攼㹣젙 ( 李⑥씠 &lt; 0 )</span>NA</code></pre></div>
+  paired<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="co"># 양측 검정</span>
+<span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">depression</span>, <span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">second</span>, <span class="va">first</span>, alternative<span class="op">=</span><span class="st">'less'</span>, paired<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+                <span class="co"># 단측 검정 ( 차이 &lt; 0 )</span></code></pre></div>
 <div class="figure">
 <img src="fig/statistics-nonparametric-paired-04.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
@@ -688,7 +722,7 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
        byrow <span class="op">=</span> <span class="cn">TRUE</span>,
        dimnames <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">:</span> <span class="fl">22</span>,
                        <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Round Out"</span>, <span class="st">"Narrow Angle"</span>, <span class="st">"Wide Angle"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">RoundingTimes</span><span class="op">)</span>     <span class="co"># RoundingTimes <eb>뜲<ec>씠<ed>꽣<ec>뀑 蹂닿린</ec></ed></ec></eb></span>NA</code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">RoundingTimes</span><span class="op">)</span>     <span class="co"># RoundingTimes 데이터셋 보기</span></code></pre></div>
 <p>이 데이터셋을 만드는 이유는 friedman.test()라는 함수의 예제 연습에 포함되어있기 때문이다. RoundingTimes 데이터셋은 아래와 같은 내부 구성을 갖는다:</p>
 <div class="figure">
 <img src="fig/statistics-nonparametric-friedman-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
@@ -708,7 +742,8 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
 <img src="fig/statistics-nonparametric-friedman-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"friedman.test"</span><span class="op">)</span>     <span class="co"># Friedman <ec>닚<ec>쐞 <ed>빀 寃<ec>젙 <eb>룄<ec>&lt;9b&gt;留&lt;90&gt; 蹂닿린</ec></eb></ec></ed></ec></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/utils/example.html">example</a></span><span class="op">(</span><span class="st">"friedman.test"</span><span class="op">)</span>  <span class="co"># Friedman <ec>닚<ec>쐞 <ed>빀 寃<ec>젙 <ec>삁<ec>젣 <ec>뿰<ec>뒿<ed>븯湲<b0></b0></ed></ec></ec></ec></ec></ec></ed></ec></ec></span>NA</code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span><span class="op">(</span><span class="st">"friedman.test"</span><span class="op">)</span>     <span class="co"># Friedman 순위 합 검정 도움말 보기</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/example.html">example</a></span><span class="op">(</span><span class="st">"friedman.test"</span><span class="op">)</span>  <span class="co"># Friedman 순위 합 검정 예제 연습하기</span></code></pre></div>
 </div>
 </div>
 <div id="차원-분석-dimensional-analysis" class="section level2" number="7.7">
@@ -1104,7 +1139,7 @@ alternative 이하의 선택 사항들은 기본 설정을 사용하였기에 �
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-17.</p>
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-05-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

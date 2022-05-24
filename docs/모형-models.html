@@ -7,17 +7,48 @@
 <title>9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
 <meta name="description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
 <meta property="og:description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9 . 모형 / models | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta name="twitter:description" content="9.1 활성 모델 선택하기…/ Select active model…  Linux 사례 (MX 21) R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-229551680-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-229551680-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,7 +81,6 @@
 <li><a class="active" href="%EB%AA%A8%ED%98%95-models.html"><span class="header-section-number">9</span> 모형 / models</a></li>
 <li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></li>
 <li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">11</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">12</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -72,9 +102,13 @@
 </div>
 <p>R Commander 상단에는 메뉴 목록이 있다. 오른쪽 끝부분에 &lt;모델: 모델이름&gt;이 활성화되면 데이터셋으로 분석 모델을 만들었다는 의미가 된다. 그런데, 여러개의 모델을 만들면서 다양한 각도로 분석적 통찰력을 키우는 경우가 일반적이다. R Commander에서는 분석과정에서 만들어진 여러개의 모델을 메모리에 상주시키고, 상황에 맞게 활용할 준비를 갖춘다. 아래의 명령문 프롬프트 창은 세개의 모델이 있음을 알린다. carData 패키지의 Prestige 데이터셋을 이용하여, 선형회귀, 선형모델 기법을 통하여 education(교육연수), income(연소득)이 prestige(직업의 사회적 권위)에 어떤 영향을 미치는가, 또 직업유형별로 차이가 있는가를 분석한다고 가정하자.</p>
 <div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span> <span class="co"># prestige <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="va">RegModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span><span class="op">~</span><span class="va">education</span><span class="op">+</span><span class="va">income</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span> <span class="co"># <ec>꽑<ed>삎<ed>쉶洹紐⑤뜽1</ed></ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">RegModel.1</span><span class="op">)</span>
-<span class="va">LinearModel.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># <ec>꽑<ed>삎紐⑤뜽1</ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.2</span><span class="op">)</span>
-<span class="va">LinearModel.4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="op">(</span><span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># <ec>꽑<ed>삎紐⑤뜽2</ed></ec></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.4</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span> <span class="co"># prestige 데이터셋 불러오기</span>
+<span class="va">RegModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span><span class="op">~</span><span class="va">education</span><span class="op">+</span><span class="va">income</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span> <span class="co"># 선형회귀모델1</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">RegModel.1</span><span class="op">)</span>
+<span class="va">LinearModel.2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># 선형모델1</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.2</span><span class="op">)</span>
+<span class="va">LinearModel.4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">prestige</span> <span class="op">~</span> <span class="op">(</span><span class="va">education</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="va">type</span>, data<span class="op">=</span><span class="va">Prestige</span><span class="op">)</span><span class="co"># 선형모델2</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.4</span><span class="op">)</span></code></pre></div>
 <p>&lt;활성 모델 선택하기…&gt;기능을 선택하면 아래와 같은 모델 목록창이 등장한다. 목록에서 하나를 선택한다.</p>
 <div class="figure">
 <img src="fig/model-select-model-02.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
@@ -158,7 +192,9 @@
 <img src="fig/model-add-obs-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span>         <span class="co"># <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span> <span class="co"># 紐⑤뜽 留뚮뱺<ed>썑 <ec>슂<ec>빟<ec>젙蹂<b4> 蹂닿린</b4></ec></ec></ec></ed></span>NA<span class="va">Prestige</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">within</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="op">{</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span>         <span class="co"># 데이터셋 불러오기</span>
+<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span> <span class="co"># 모델 만든후 요약정보 보기</span>
+<span class="va">Prestige</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">within</a></span><span class="op">(</span><span class="va">Prestige</span>, <span class="op">{</span>
   <span class="va">fitted.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
   <span class="va">residuals.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">residuals</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
   <span class="va">rstudent.LinearModel.1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">rstudent</a></span><span class="op">(</span><span class="va">LinearModel.1</span><span class="op">)</span>
@@ -326,7 +362,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-17.</p>
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-05-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -7,17 +7,48 @@
 <title>6 . 데이터 / Data | 설치형 오픈 통계 패키지 - Rcmdr</title>
 <meta name="author" content="신종화, 이광춘, 유충현, 홍성학">
 <meta name="description" content="6.1 새로운 데이터셋…/ New data set…  Windows 사례 메뉴를 선택하면 다음과 같은 화면으로 넘어간다. 만들고자하는 데이터셋의 이름을 정하는 기능이다. Dataset 이라고 기본 설정되어 있다. Windows 사례 새롭게 만들고자하는 데이터셋의 구조가 나타난다. 변수는 V1, V2, V3 등으로 자동적으로 일련변호화된다....">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="6 . 데이터 / Data | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta property="og:type" content="book">
 <meta property="og:description" content="6.1 새로운 데이터셋…/ New data set…  Windows 사례 메뉴를 선택하면 다음과 같은 화면으로 넘어간다. 만들고자하는 데이터셋의 이름을 정하는 기능이다. Dataset 이라고 기본 설정되어 있다. Windows 사례 새롭게 만들고자하는 데이터셋의 구조가 나타난다. 변수는 V1, V2, V3 등으로 자동적으로 일련변호화된다....">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6 . 데이터 / Data | 설치형 오픈 통계 패키지 - Rcmdr">
 <meta name="twitter:description" content="6.1 새로운 데이터셋…/ New data set…  Windows 사례 메뉴를 선택하면 다음과 같은 화면으로 넘어간다. 만들고자하는 데이터셋의 이름을 정하는 기능이다. Dataset 이라고 기본 설정되어 있다. Windows 사례 새롭게 만들고자하는 데이터셋의 구조가 나타난다. 변수는 V1, V2, V3 등으로 자동적으로 일련변호화된다....">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-229551680-1"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-229551680-1');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -50,7 +81,6 @@
 <li><a class="" href="%EB%AA%A8%ED%98%95-models.html"><span class="header-section-number">9</span> 모형 / models</a></li>
 <li><a class="" href="%EB%8F%84%EA%B5%AC-tools.html"><span class="header-section-number">10</span> 도구 / Tools</a></li>
 <li><a class="" href="%EB%8F%84%EC%9B%80%EB%A7%90-help.html"><span class="header-section-number">11</span> 도움말 / Help</a></li>
-<li><a class="" href="%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B-datasets.html"><span class="header-section-number">12</span> 데이터셋 / datasets</a></li>
 <li><a class="" href="%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C.html">참고문헌</a></li>
 </ul>
 
@@ -121,8 +151,10 @@
 <p>carData 패키지에 있는 Prestige 데이터셋으로 연습해보자. <a href="https://rcmdr.tistory.com/143">Prestige 데이터셋</a></p>
 <p>Prestige 데이터셋의 하위셋 <code>Prestige.sub1</code>과 <code>Prestige.sub2</code> 두개를 만들자.</p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span>    <span class="co"># Prestige <eb>뜲<ec>씠<ed>꽣<ec>뀑 遺덈윭<ec>삤湲<b0></b0></ec></ec></ed></ec></eb></span>NA<span class="va">Prestige.sub1</span> <span class="op">&lt;-</span> <span class="va">Prestige</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">61</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span><span class="op">)</span>,<span class="op">]</span> 
-                                     <span class="co"># Prestige <eb>뜲<ec>씠<ed>꽣<ec>뀑<ec>뿉<ec>꽌 <ec>궗濡 吏<ec>슦湲<b0>1 (61遺<ed>꽣 <eb>걹源뚯<a7>)</a7></eb></ed></b0></ec></ec></ec></ec></ec></ed></ec></eb></span>NA<span class="va">Prestige.sub2</span> <span class="op">&lt;-</span> <span class="va">Prestige</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">60</span><span class="op">)</span>,<span class="op">]</span> <span class="co"># Prestige <eb>뜲<ec>씠<ed>꽣<ec>뀑<ec>뿉<ec>꽌 <ec>궗濡 吏<ec>슦湲<b0>2 (1遺<ed>꽣 60源뚯<a7>)</a7></ed></b0></ec></ec></ec></ec></ec></ed></ec></eb></span>NA</code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">Prestige</span>, package<span class="op">=</span><span class="st">"carData"</span><span class="op">)</span>    <span class="co"># Prestige 데이터셋 불러오기</span>
+<span class="va">Prestige.sub1</span> <span class="op">&lt;-</span> <span class="va">Prestige</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">61</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span><span class="op">)</span>,<span class="op">]</span> 
+                                     <span class="co"># Prestige 데이터셋에서 사례 지우기1 (61부터 끝까지)</span>
+<span class="va">Prestige.sub2</span> <span class="op">&lt;-</span> <span class="va">Prestige</span><span class="op">[</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">60</span><span class="op">)</span>,<span class="op">]</span> <span class="co"># Prestige 데이터셋에서 사례 지우기2 (1부터 60까지)</span></code></pre></div>
 <p><a href="https://rcmdr.tistory.com/48">10. Remove row(s) from active data set…</a> &lt;- 화면의 메뉴를 이용하여 사례 제거를 연습할 수 있다.</p>
 <p>아래의 내용은 Prestige.sub1과 Prestige.sub2를 병합하고자 하는 연습이다. &lt;첫째 데이터셋(하나 선택)&gt;과 &lt;둘째 데이터셋 (하나 선택)&gt;에서 데이터셋을 하나씩 선택하고, 공통의 데이터 구조를 가진 두개의 데이터셋을 이어붙이는 의 병합 방향을 선택해보자.</p>
 <div class="figure">
@@ -200,8 +232,9 @@
 <div class="figure">
 <img src="fig/data-import-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data.html#cb28-1" aria-hidden="true" tabindex="-1"></a>Nations <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"/home/jhshin/다운로드/Rcmdr/inst/etc/Nations.txt"</span>, <span class="at">header=</span><span class="cn">TRUE</span>, </span>
-<span id="cb28-2"><a href="data.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">""</span>, <span class="at">na.strings=</span><span class="st">"NA"</span>, <span class="at">dec=</span><span class="st">"."</span>, <span class="at">strip.white=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">Nations</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"/home/jhshin/다운로드/Rcmdr/inst/etc/Nations.txt"</span>, header<span class="op">=</span><span class="cn">TRUE</span>, 
+  stringsAsFactors<span class="op">=</span><span class="cn">TRUE</span>, sep<span class="op">=</span><span class="st">""</span>, na.strings<span class="op">=</span><span class="st">"NA"</span>, dec<span class="op">=</span><span class="st">"."</span>, strip.white<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><code>Nations</code>라는 이름으로 불러온 데이터셋이 활성화되어 R Commander 에서 활용할 수 있는 환경이 시작된다.</p>
 <hr>
 <p>사례를 하나 소개한다. libreOffice Calc에서 엑셀파일을 불러오고, 또 이것의 첫 시트를 clipboard에 복사하고, R Commander로 불러온다고 생각해보자.</p>
@@ -283,7 +316,7 @@
 <img src="fig/data-active-view-05.png" alt=""><p class="caption">Windows 사례 (10 Pro)</p>
 </div>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">relimp</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/relimp/man/showData.html">showData</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu">relimp</span><span class="fu">::</span><span class="fu">showData</span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <hr>
 <p>조금 난이도가 있는 고민을 해보자. 데이터셋 내부를 보고자 한다. 그러나, 데이터셋에 대한 기초적인 이해를 확보한 이후, 범위를 좁혀서 통찰력을 키우기 위하여 다양한 방식으로 데이터셋 내부를 보고자 할 수 있다. 몇 개의 변수를 선택하고, 또 요인형 변수의 어느 수준으로 제한된 범위 안에서 데이터셋 내부를 볼 수 있다. 아래 화면에서 원하는 변수를 선택하고, 을 추가한 것을 볼 수 있다. type (직업 유형)에는 bc, prof, wc 라는 수준이 있다는 것을 미리 알고, white collar 직업군 내부의 정보를 보고자 type == “wc”로 제한하도록 하자.</p>
 <div class="figure">
@@ -416,7 +449,7 @@
 <div class="figure">
 <img src="fig/data-active-subset-03.png" alt=""><p class="caption">Windows 사례</p>
 </div>
-<p>그런데, type 변수에는 “prof,” “bc,” “wc”라는 요인(factor)형 정보가 담겨있다. 이 중에서 전문직(prof)에 관한 데이터의 정보만 추출하려면 다음과 같이 조건을 지정해야 한다.</p>
+<p>그런데, type 변수에는 “prof”, “bc”, “wc”라는 요인(factor)형 정보가 담겨있다. 이 중에서 전문직(prof)에 관한 데이터의 정보만 추출하려면 다음과 같이 조건을 지정해야 한다.</p>
 <div class="figure">
 <img src="fig/data-active-subset-04.png" alt=""><p class="caption">Windows 사례</p>
 </div>
@@ -528,13 +561,13 @@
 <div class="figure">
 <img src="fig/data-active-filter-05.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
 </div>
-<p>babysitters, farmers라는 두개의 사례를 제거해보자. 이 경우는 앞서서 행의 번호를 입력한 것과 달리 “babysitters,” “farmers”라고 입력해야 한다.</p>
+<p>babysitters, farmers라는 두개의 사례를 제거해보자. 이 경우는 앞서서 행의 번호를 입력한 것과 달리 “babysitters”, “farmers”라고 입력해야 한다.</p>
 <div class="figure">
 <img src="fig/data-active-filter-06.png" alt=""><p class="caption">Linux 사례 (Ubuntu 18.04)</p>
 </div>
 <p>다소 생소하고 복잡해 보이는 방식으로 명령문을 입력해야 한다. 논리적으로 보면, 데이터셋의 사례 이름들 중에서 제거하고자 하는 사례 이름들을 찾아서 데이터셋에서 삭제하라는 뜻이다.</p>
 <blockquote>
-<p>새로운데이터셋 &lt;- 활성데이터셋[!(rownames(활성데이터셋) %in% c(“제거사례이름1,” “제거사례이름2”)), ]</p>
+<p>새로운데이터셋 &lt;- 활성데이터셋[!(rownames(활성데이터셋) %in% c(“제거사례이름1”, “제거사례이름2”)), ]</p>
 </blockquote>
 <p>Prestige.sub1 데이터셋에서 babysitters, farmers 두개의 사례를 제거했기 때문에, 알림글의 지시문을 보면 사례수는 90개에서 88개로 줄어들었음을 확인할 수 있다.</p>
 </div>
@@ -554,8 +587,8 @@
 <img src="fig/data-active-stack-03.png" alt=""><p class="caption">Windows 사례</p>
 </div>
 <blockquote>
-<p>새로운데이터셋 &lt;- stack(활성데이터셋[, c(“선택된수치형변수1,” “선택된수치형변수2”)])
-names(새로운데이터셋) &lt;- c(“새로운변수이름1,” “새로운변수이름2(요인형변수)”)</p>
+<p>새로운데이터셋 &lt;- stack(활성데이터셋[, c(“선택된수치형변수1”, “선택된수치형변수2”)])
+names(새로운데이터셋) &lt;- c(“새로운변수이름1”, “새로운변수이름2(요인형변수)”)</p>
 </blockquote>
 <p> 버튼을 누르면 어떤 형식으로 데이터셋이 재구성되는지 확인할 수 있다.</p>
 <div class="figure">
@@ -600,7 +633,7 @@ names(새로운데이터셋) &lt;- c(“새로운변수이름1,” “새로운�
 <img src="fig/data-active-missing-05.png" alt=""><p class="caption">Windows 사례</p>
 </div>
 <blockquote>
-<p>새로운데이터셋 &lt;- na.omit(활성데이터셋[ , c(“선택변수1,” “선택변수2,” “선택변수3,” “선택변수4”)])</p>
+<p>새로운데이터셋 &lt;- na.omit(활성데이터셋[ , c(“선택변수1”, “선택변수2”, “선택변수3”, “선택변수4”)])</p>
 </blockquote>
 </div>
 <div id="긴-형식에서-넓은-형식으로-데이터셋-모양바꾸기-active-data-set-reshape-data-set-from-long-to-wide-format" class="section level3" number="6.6.13">
@@ -709,7 +742,7 @@ names(새로운데이터셋) &lt;- c(“새로운변수이름1,” “새로운�
 </div>
 <p><code><a href="https://rdrr.io/r/base/save.html">save()</a></code> 함수를 사용한다. Linux 환경에서는아래화면처럼 경로명을 사용한다.</p>
 <blockquote>
-<p>save(“활성데이터셋이름,” file=“경로/Prestige.RData”)</p>
+<p>save(“활성데이터셋이름”, file=“경로/Prestige.RData”)</p>
 </blockquote>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/save.html">save</a></span><span class="op">(</span><span class="va">...</span>, list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">character</a></span><span class="op">(</span><span class="op">)</span>,
@@ -1049,9 +1082,10 @@ names(새로운데이터셋) &lt;- c(“새로운변수이름1,” “새로운�
 <img src="fig/data-active-rename-03.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
 <blockquote>
-<p>names(데이터셋이름)[변수번호] &lt;- c(“새로운변수이름1,” “새로운변수이름2,” “새로운변수이름3”) 등으로 함수가 사용된다.</p>
+<p>names(데이터셋이름)[변수번호] &lt;- c(“새로운변수이름1”, “새로운변수이름2”, “새로운변수이름3”) 등으로 함수가 사용된다.</p>
 </blockquote>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(Prestige)[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"교육연수"</span>, <span class="st">"수입"</span>, <span class="st">"직업권위"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">Prestige</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"교육연수"</span>, <span class="st">"수입"</span>, <span class="st">"직업권위"</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="fig/data-active-rename-04.png" alt=""><p class="caption">Linux 사례 (MX 21)</p>
 </div>
@@ -1163,7 +1197,7 @@ names(새로운데이터셋) &lt;- c(“새로운변수이름1,” “새로운�
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-04-17.</p>
+    <p>"<strong>설치형 오픈 통계 패키지 - <code>Rcmdr</code></strong>" was written by 신종화, 이광춘, 유충현, 홍성학. It was last built on 2022-05-24.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

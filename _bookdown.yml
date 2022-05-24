@@ -22,7 +22,7 @@ rmd_files: [
   "models.Rmd",
   "tools.Rmd",
   "help.Rmd",
-  "datasets.Rmd",
+  # "datasets.Rmd", # R 도움말 xml2 오류로 제외~~~
   "references.Rmd"
 
 ]
